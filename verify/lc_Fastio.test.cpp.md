@@ -1,12 +1,19 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: cpstl/Fastio.hpp
+    title: cpstl/Fastio.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/many_aplusb_128bit
+    links:
+    - https://judge.yosupo.jp/problem/many_aplusb_128bit
   bundledCode: "#line 1 \"verify/lc_Fastio.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"cpstl/Fastio.hpp\"\nnamespace cpstd {\n\
     static constexpr const int BUF_SIZE = 1 << 19;\n\nclass Cinstream {\n\tprivate:\n\
@@ -142,12 +149,13 @@ data:
     #include <bits/stdc++.h>\n#include \"cpstl/Fastio.hpp\"\n\nint main() {\n\tint\
     \ T;\n\tcpstd::Cin >> T;\n\t__int128_t A, B;\n\twhile (T--) {\n\t\tcpstd::Cin\
     \ >> A >> B;\n\t\tcpstd::Cout << A + B << '\\n';\n\t}\n}\n"
-  dependsOn: []
+  dependsOn:
+  - cpstl/Fastio.hpp
   isVerificationFile: true
   path: verify/lc_Fastio.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-07-16 00:54:42+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lc_Fastio.test.cpp
 layout: document
