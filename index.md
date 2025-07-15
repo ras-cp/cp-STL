@@ -1,6 +1,11 @@
 ---
 data:
-  libraryCategories: []
+  libraryCategories:
+  - name: cpstl
+    pages:
+    - icon: ':warning:'
+      path: cpstl/Fastio.hpp
+      title: cpstl/Fastio.hpp
   verificationCategories:
   - name: verify
     pages:
