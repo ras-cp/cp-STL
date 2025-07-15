@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"cpstl/Fastio.hpp\"\nnamespace cpstd {\nstatic constexpr\
+  bundledCode: "#line 2 \"cpstl/other/Fastio.hpp\"\nnamespace cpstd {\nstatic constexpr\
     \ const int BUF_SIZE = 1 << 19;\n\nclass Cinstream {\n\tprivate:\n\tunsigned int\
     \ p = BUF_SIZE;\n\tstatic char Q[BUF_SIZE];\n\n\tpublic:\n\tchar seekchar() {\n\
     \t\tif (p == BUF_SIZE) {\n\t\t\tsize_t len = fread(Q, 1, BUF_SIZE, stdin);\n\t\
@@ -269,16 +269,16 @@ data:
     char Cinstream::Q[BUF_SIZE], Coutstream::Q[BUF_SIZE];\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: cpstl/Fastio.hpp
+  path: cpstl/other/Fastio.hpp
   requiredBy: []
-  timestamp: '2025-07-16 00:54:42+09:00'
+  timestamp: '2025-07-16 04:07:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/lc_Fastio.test.cpp
-documentation_of: cpstl/Fastio.hpp
+documentation_of: cpstl/other/Fastio.hpp
 layout: document
-redirect_from:
-- /library/cpstl/Fastio.hpp
-- /library/cpstl/Fastio.hpp.html
-title: cpstl/Fastio.hpp
+title: Fastio
 ---
+
+## Fastio
+高速入出力．`Pair`や`tuple`, `vector`も直接入出力が可能 (出力は空白区切りとなる)．また，`__int128_t`の入出力にも対応．

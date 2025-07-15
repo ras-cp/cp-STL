@@ -1,11 +1,11 @@
 ---
 data:
   libraryCategories:
-  - name: cpstl
+  - name: cpstl/other
     pages:
     - icon: ':heavy_check_mark:'
-      path: cpstl/Fastio.hpp
-      title: cpstl/Fastio.hpp
+      path: cpstl/other/Fastio.hpp
+      title: Fastio
   verificationCategories:
   - name: verify
     pages:

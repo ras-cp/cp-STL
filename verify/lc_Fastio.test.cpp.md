@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: cpstl/Fastio.hpp
-    title: cpstl/Fastio.hpp
+    path: cpstl/other/Fastio.hpp
+    title: Fastio
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,8 +15,8 @@ data:
     links:
     - https://judge.yosupo.jp/problem/many_aplusb_128bit
   bundledCode: "#line 1 \"verify/lc_Fastio.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\
-    \n\n#include <bits/stdc++.h>\n#line 2 \"cpstl/Fastio.hpp\"\nnamespace cpstd {\n\
-    static constexpr const int BUF_SIZE = 1 << 19;\n\nclass Cinstream {\n\tprivate:\n\
+    \n\n#include <bits/stdc++.h>\n#line 2 \"cpstl/other/Fastio.hpp\"\nnamespace cpstd\
+    \ {\nstatic constexpr const int BUF_SIZE = 1 << 19;\n\nclass Cinstream {\n\tprivate:\n\
     \tunsigned int p = BUF_SIZE;\n\tstatic char Q[BUF_SIZE];\n\n\tpublic:\n\tchar\
     \ seekchar() {\n\t\tif (p == BUF_SIZE) {\n\t\t\tsize_t len = fread(Q, 1, BUF_SIZE,\
     \ stdin);\n\t\t\tif (len != BUF_SIZE) Q[len] = '\\0';\n\t\t\tp = 0;\n\t\t}\n\t\
@@ -146,15 +146,15 @@ data:
     \n\nint main() {\n\tint T;\n\tcpstd::Cin >> T;\n\t__int128_t A, B;\n\twhile (T--)\
     \ {\n\t\tcpstd::Cin >> A >> B;\n\t\tcpstd::Cout << A + B << '\\n';\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n\
-    #include <bits/stdc++.h>\n#include \"cpstl/Fastio.hpp\"\n\nint main() {\n\tint\
-    \ T;\n\tcpstd::Cin >> T;\n\t__int128_t A, B;\n\twhile (T--) {\n\t\tcpstd::Cin\
+    #include <bits/stdc++.h>\n#include \"cpstl/other/Fastio.hpp\"\n\nint main() {\n\
+    \tint T;\n\tcpstd::Cin >> T;\n\t__int128_t A, B;\n\twhile (T--) {\n\t\tcpstd::Cin\
     \ >> A >> B;\n\t\tcpstd::Cout << A + B << '\\n';\n\t}\n}\n"
   dependsOn:
-  - cpstl/Fastio.hpp
+  - cpstl/other/Fastio.hpp
   isVerificationFile: true
   path: verify/lc_Fastio.test.cpp
   requiredBy: []
-  timestamp: '2025-07-16 00:54:42+09:00'
+  timestamp: '2025-07-16 04:08:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lc_Fastio.test.cpp
