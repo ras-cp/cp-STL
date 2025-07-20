@@ -1,14 +1,14 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/many_aplusb_128bit"
 
 #include <bits/stdc++.h>
-#include "cpstl/other/Fastio.hpp"
+#include "cpstl/other/fastio.hpp"
 
 int main() {
 	int T;
-	cpstd::Cin >> T;
-	__int128_t A, B;
+	cpstd::input(T);
+	__int128 A, B;
 	while (T--) {
-		cpstd::Cin >> A >> B;
-		cpstd::Cout << A + B << '\n';
+		cpstd::input(A, B);
+		cpstd::print(A + B);
 	}
 }
