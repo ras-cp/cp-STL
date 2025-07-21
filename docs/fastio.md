@@ -1,6 +1,6 @@
 ---
 title: fastio
-documentation_of: //cpstl/other/Fastio.hpp
+documentation_of: //cpstl/other/fastio.hpp
 ---
 
 ## fastio
