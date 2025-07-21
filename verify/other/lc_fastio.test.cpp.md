@@ -14,7 +14,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/many_aplusb_128bit
     links:
     - https://judge.yosupo.jp/problem/many_aplusb_128bit
-  bundledCode: "#line 1 \"verify/lc_fastio.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\
+  bundledCode: "#line 1 \"verify/other/lc_fastio.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"cpstl/other/fastio.hpp\"\nnamespace cpstd\
     \ {\n\n// https://judge.yosupo.jp/submission/21623\n// https://maspypy.com/library-checker-many-a-b\n\
     \nnamespace fastio {\n\nstatic constexpr const uint32_t BUF_SIZE = 1 << 17;\n\
@@ -88,8 +88,8 @@ data:
     \ print(H &&tgh, T &&... tgt) {\n\t_print(tgh);\n\tif (sizeof...(tgt)) _print('\
     \ ');\n\tprint(std::forward<T>(tgt)...);\n}\n\nvoid __attribute__((destructor))\
     \ _d() { flush(); }\n\n};\n\nusing fastio::input;\nusing fastio::print;\nusing\
-    \ fastio::flush;\n\n};\n#line 5 \"verify/lc_fastio.test.cpp\"\n\nint main() {\n\
-    \tint T;\n\tcpstd::input(T);\n\t__int128 A, B;\n\twhile (T--) {\n\t\tcpstd::input(A,\
+    \ fastio::flush;\n\n};\n#line 5 \"verify/other/lc_fastio.test.cpp\"\n\nint main()\
+    \ {\n\tint T;\n\tcpstd::input(T);\n\t__int128 A, B;\n\twhile (T--) {\n\t\tcpstd::input(A,\
     \ B);\n\t\tcpstd::print(A + B);\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n\
     #include <bits/stdc++.h>\n#include \"cpstl/other/fastio.hpp\"\n\nint main() {\n\
@@ -98,15 +98,15 @@ data:
   dependsOn:
   - cpstl/other/fastio.hpp
   isVerificationFile: true
-  path: verify/lc_fastio.test.cpp
+  path: verify/other/lc_fastio.test.cpp
   requiredBy: []
-  timestamp: '2025-07-21 03:20:52+09:00'
+  timestamp: '2025-07-22 02:39:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/lc_fastio.test.cpp
+documentation_of: verify/other/lc_fastio.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/lc_fastio.test.cpp
-- /verify/verify/lc_fastio.test.cpp.html
-title: verify/lc_fastio.test.cpp
+- /verify/verify/other/lc_fastio.test.cpp
+- /verify/verify/other/lc_fastio.test.cpp.html
+title: verify/other/lc_fastio.test.cpp
 ---

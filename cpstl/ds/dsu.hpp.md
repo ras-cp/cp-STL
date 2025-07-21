@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc_dsu.test.cpp
+    title: verify/ds/lc_dsu.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"cpstl/ds/dsu.hpp\"\nnamespace cpstd {\n\n// Disjoint Set\
@@ -58,8 +61,9 @@ data:
   path: cpstl/ds/dsu.hpp
   requiredBy: []
   timestamp: '2025-07-22 02:37:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/ds/lc_dsu.test.cpp
 documentation_of: cpstl/ds/dsu.hpp
 layout: document
 redirect_from:

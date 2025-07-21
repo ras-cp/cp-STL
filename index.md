@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: cpstl/ds
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/ds/dsu.hpp
       title: cpstl/ds/dsu.hpp
   - name: cpstl/other
@@ -12,10 +12,15 @@ data:
       path: cpstl/other/fastio.hpp
       title: fastio
   verificationCategories:
-  - name: verify
+  - name: verify/ds
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/lc_fastio.test.cpp
-      title: verify/lc_fastio.test.cpp
+      path: verify/ds/lc_dsu.test.cpp
+      title: verify/ds/lc_dsu.test.cpp
+  - name: verify/other
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/other/lc_fastio.test.cpp
+      title: verify/other/lc_fastio.test.cpp
 layout: toppage
 ---
