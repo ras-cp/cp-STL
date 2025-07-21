@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: cpstl/other/fastio.hpp
-      title: cpstl/other/fastio.hpp
+      title: fastio
   verificationCategories:
   - name: verify
     pages:
