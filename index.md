@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: cpstl/ds
+    pages:
+    - icon: ':warning:'
+      path: cpstl/ds/dsu.hpp
+      title: cpstl/ds/dsu.hpp
   - name: cpstl/other
     pages:
     - icon: ':heavy_check_mark:'
