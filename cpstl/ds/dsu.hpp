@@ -45,6 +45,13 @@ class dsu {
 		return _leader(a) == _leader(b);
 	}
 
+	// `x` が属する集合の大きさを返す
+	// amortized O(α(N)) time
+	int size(int x) {
+		assert(0 <= x && x < _n);
+		return -tree[_leader(x)];
+	}
+
 	// 集合ごとに配列にまとめた配列を返す
 	// O(Nα(N)) time
 	std::vector<std::vector<int>> groups() {
