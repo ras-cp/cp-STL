@@ -107,16 +107,18 @@ data:
     \t\ttree[b] = a;\n\t\treturn true;\n\t}\n\n\t// `a` \u3068 `b` \u304C\u540C\u3058\
     \u96C6\u5408\u306B\u5C5E\u3059\u308B\u304B\u8FD4\u3059\n\t// amoritized O(\u03B1\
     (N)) time\n\tbool same(int a, int b) {\n\t\tassert(0 <= a && a < _n);\n\t\tassert(0\
-    \ <= b && b < _n);\n\t\treturn _leader(a) == _leader(b);\n\t}\n\n\t// \u96C6\u5408\
-    \u3054\u3068\u306B\u914D\u5217\u306B\u307E\u3068\u3081\u305F\u914D\u5217\u3092\
-    \u8FD4\u3059\n\t// O(N\u03B1(N)) time\n\tstd::vector<std::vector<int>> groups()\
-    \ {\n\t\tstd::vector<std::vector<int>> mem, res;\n\t\tfor (int i = 0; i < _n;\
-    \ ++i) mem[_leader(i)].push_back(i);\n\t\tfor (int i = 0; i < _n; ++i) {\n\t\t\
-    \tif (!mem[i].empty()) res.emplace_back(mem[i]);\n\t\t}\n\t\treturn res;\n\t}\n\
-    };\n};\n#line 6 \"verify/ds/lc_dsu.test.cpp\"\n\nint main() {\n\tint N, Q;\n\t\
-    cpstd::input(N, Q);\n\tcpstd::dsu uf(N);\n\tint t, u, v;\n\twhile (Q--) {\n\t\t\
-    cpstd::input(t, u, v);\n\t\tif (t == 0) uf.merge(u, v);\n\t\telse cpstd::print((uf.same(u,\
-    \ v) ? \"1\" : \"0\"));\n\t}\n}\n"
+    \ <= b && b < _n);\n\t\treturn _leader(a) == _leader(b);\n\t}\n\n\t// `x` \u304C\
+    \u5C5E\u3059\u308B\u96C6\u5408\u306E\u5927\u304D\u3055\u3092\u8FD4\u3059\n\t//\
+    \ amortized O(\u03B1(N)) time\n\tint size(int x) {\n\t\tassert(0 <= x && x < _n);\n\
+    \t\treturn -tree[_leader(x)];\n\t}\n\n\t// \u96C6\u5408\u3054\u3068\u306B\u914D\
+    \u5217\u306B\u307E\u3068\u3081\u305F\u914D\u5217\u3092\u8FD4\u3059\n\t// O(N\u03B1\
+    (N)) time\n\tstd::vector<std::vector<int>> groups() {\n\t\tstd::vector<std::vector<int>>\
+    \ mem, res;\n\t\tfor (int i = 0; i < _n; ++i) mem[_leader(i)].push_back(i);\n\t\
+    \tfor (int i = 0; i < _n; ++i) {\n\t\t\tif (!mem[i].empty()) res.emplace_back(mem[i]);\n\
+    \t\t}\n\t\treturn res;\n\t}\n};\n};\n#line 6 \"verify/ds/lc_dsu.test.cpp\"\n\n\
+    int main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tcpstd::dsu uf(N);\n\tint t,\
+    \ u, v;\n\twhile (Q--) {\n\t\tcpstd::input(t, u, v);\n\t\tif (t == 0) uf.merge(u,\
+    \ v);\n\t\telse cpstd::print((uf.same(u, v) ? \"1\" : \"0\"));\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <bits/stdc++.h>\n#include \"cpstl/other/fastio.hpp\"\n#include \"cpstl/ds/dsu.hpp\"\
     \n\nint main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tcpstd::dsu uf(N);\n\t\
@@ -128,7 +130,7 @@ data:
   isVerificationFile: true
   path: verify/ds/lc_dsu.test.cpp
   requiredBy: []
-  timestamp: '2025-07-22 02:38:39+09:00'
+  timestamp: '2025-07-25 01:14:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ds/lc_dsu.test.cpp
