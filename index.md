@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/dsu.hpp
-      title: dsu
+      title: Disjoint Set Union
   - name: cpstl/other
     pages:
     - icon: ':heavy_check_mark:'

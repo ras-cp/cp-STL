@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: cpstl/ds/dsu.hpp
-    title: dsu
+    title: Disjoint Set Union
   - icon: ':heavy_check_mark:'
     path: cpstl/other/fastio.hpp
     title: Fast I/O

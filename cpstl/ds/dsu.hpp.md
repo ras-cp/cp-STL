@@ -71,7 +71,7 @@ data:
   - verify/ds/lc_dsu.test.cpp
 documentation_of: cpstl/ds/dsu.hpp
 layout: document
-title: dsu
+title: Disjoint Set Union
 ---
 
 ## 概要
