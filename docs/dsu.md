@@ -1,5 +1,5 @@
 ---
-title: dsu
+title: Disjoint Set Union
 documentation_of: //cpstl/ds/dsu.hpp
 ---
 
