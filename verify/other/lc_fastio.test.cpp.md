@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: cpstl/other/fastio.hpp
-    title: fastio
+    title: Fast I/O
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

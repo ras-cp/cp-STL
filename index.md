@@ -10,7 +10,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: cpstl/other/fastio.hpp
-      title: fastio
+      title: Fast I/O
   verificationCategories:
   - name: verify/ds
     pages:
