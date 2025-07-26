@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+    title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/ds/lc_dsu.test.cpp
     title: verify/ds/lc_dsu.test.cpp
   - icon: ':heavy_check_mark:'
@@ -169,6 +172,7 @@ data:
   timestamp: '2025-07-21 03:20:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
   - verify/ds/lc_dsu.test.cpp
   - verify/other/lc_fastio.test.cpp
 documentation_of: cpstl/other/fastio.hpp
