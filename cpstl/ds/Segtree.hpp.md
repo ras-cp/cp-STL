@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+    title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"cpstl/ds/Segtree.hpp\"\n\n#include <vector>\n\nnamespace\
@@ -123,8 +126,9 @@ data:
   path: cpstl/ds/Segtree.hpp
   requiredBy: []
   timestamp: '2025-07-27 21:22:16+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
 documentation_of: cpstl/ds/Segtree.hpp
 layout: document
 redirect_from:

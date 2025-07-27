@@ -6,12 +6,12 @@ data:
     - icon: ':warning:'
       path: cpstl/ds/Dsu.hpp
       title: cpstl/ds/Dsu.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: cpstl/ds/Segtree.hpp
       title: cpstl/ds/Segtree.hpp
   - name: cpstl/other
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: cpstl/other/Fastio.hpp
       title: cpstl/other/Fastio.hpp
   verificationCategories:
