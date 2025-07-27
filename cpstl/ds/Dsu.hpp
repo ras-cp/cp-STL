@@ -1,10 +1,13 @@
 #pragma once
+
+#include <vector>
+
 namespace cpstd {
 
 // Disjoint Set Union
 // union by size + path compression
 
-class dsu {
+class Dsu {
 	private:
 	int _n;
 	std::vector<int> tree;
@@ -14,8 +17,8 @@ class dsu {
 	}
 
 	public:
-	dsu() {}
-	explicit dsu(int n) : _n(n), tree(n, -1) {}
+	Dsu() {}
+	explicit Dsu(int n) : _n(n), tree(n, -1) {}
 
 	// `x` の属する集合の代表元を返す
 	// amortized O(α(N)) time
