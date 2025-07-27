@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 
 #include <bits/stdc++.h>
-#include "cpstl/other/fastio.hpp"
-#include "cpstl/ds/segtree.hpp"
+#include "cpstl/other/Fastio.hpp"
+#include "cpstl/ds/Segtree.hpp"
 
 long long op(long long a, long long b) { return a + b; }
 long long e() { return 0; }
@@ -12,7 +12,7 @@ int main() {
 	cpstd::input(N, Q);
 	std::vector<long long> A(N);
 	cpstd::input(A);
-	cpstd::segtree<long long, op, e> sg(A);
+	cpstd::Segtree<long long, op, e> sg(A);
 	int t;
 	while (Q--) {
 		cpstd::input(t);
