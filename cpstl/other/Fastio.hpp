@@ -1,10 +1,12 @@
 #pragma once
 namespace cpstd {
 
+// Fast I/O
+
 // https://judge.yosupo.jp/submission/21623
 // https://maspypy.com/library-checker-many-a-b
 
-namespace fastio {
+namespace Fastio {
 
 static constexpr const uint32_t BUF_SIZE = 1 << 17;
 char ibuf[BUF_SIZE], obuf[BUF_SIZE], out[100];
@@ -123,6 +125,7 @@ void _input(std::vector<T> &dest) { for (auto &e : dest) _input(e); }
 
 void input() {}
 
+// 各引数に入力
 template <typename H, typename... T>
 void input(H &desth, T &... destt) { _input(desth), input(destt...); }
 
@@ -224,6 +227,7 @@ void _print(const std::vector<T> tg) {
 
 void print() { _print('\n'); }
 
+// 各引数を空白区切りで出力し改行
 template <typename H, typename... T>
 void print(H &&tgh, T &&... tgt) {
 	_print(tgh);
@@ -235,8 +239,8 @@ void __attribute__((destructor)) _d() { flush(); }
 
 };
 
-using fastio::input;
-using fastio::print;
-using fastio::flush;
+using Fastio::input;
+using Fastio::print;
+using Fastio::flush;
 
 };
