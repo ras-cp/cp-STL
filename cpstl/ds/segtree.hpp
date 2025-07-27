@@ -11,16 +11,16 @@ template <
 	auto op,
 	auto e
 >
-class segtree {
+class Segtree {
 	private:
 	std::vector<S> dat;
 	int N, sz;
 
 	public:
-	segtree() {}
-	explicit segtree(int n) : segtree(std::vector<S>(n, e())) {}
-	explicit segtree(int n, const S &init) : segtree(std::vector<S>(n, init)) {}
-	explicit segtree(const std::vector<S> &v) : N((int)v.size()) {
+	Segtree() {}
+	explicit Segtree(int n) : segtree(std::vector<S>(n, e())) {}
+	explicit Segtree(int n, const S &init) : segtree(std::vector<S>(n, init)) {}
+	explicit Segtree(const std::vector<S> &v) : N((int)v.size()) {
 		sz = 1;
 		while (sz < N) sz <<= 1;
 		dat.assign(sz << 1, e());
@@ -28,7 +28,7 @@ class segtree {
 		for (int i = sz - 1; i >= 1; --i) dat[i] = op(dat[i << 1], dat[i << 1 | 1]);
 	}
 	template <class Inputit>
-	segtree(Inputit first, Inputit last) : segtree(std::vector<S>(first, last)) {}
+	Segtree(Inputit first, Inputit last) : segtree(std::vector<S>(first, last)) {}
 
 	// A[pos] ← x で更新
 	// O(logN) time
