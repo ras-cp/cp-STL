@@ -6,20 +6,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
       title: Disjoint Set Union
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/ds/Segtree.hpp
       title: cpstl/ds/Segtree.hpp
   - name: cpstl/other
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/other/Fastio.hpp
       title: Fast I/O
   verificationCategories:
   - name: verify/ds
     pages:
-    - icon: ':x:'
-      path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
-      title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+      title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Union-Find-Dsu.test.cpp
       title: verify/ds/lc-Union-Find-Dsu.test.cpp

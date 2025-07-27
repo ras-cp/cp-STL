@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/ds/Segtree.hpp
     title: cpstl/ds/Segtree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "#line 1 \"verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp\"\n#define\
+  bundledCode: "#line 1 \"verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#include\
     \ <bits/stdc++.h>\n#line 2 \"cpstl/other/Fastio.hpp\"\nnamespace cpstd {\n\n//\
     \ Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n// https://maspypy.com/library-checker-many-a-b\n\
@@ -96,13 +96,13 @@ data:
     \ Fastio::flush;\n\n};\n#line 2 \"cpstl/ds/Segtree.hpp\"\n\n#line 4 \"cpstl/ds/Segtree.hpp\"\
     \n\nnamespace cpstd {\n\n// Segment Tree\n\ntemplate <\n\ttypename S,\n\tauto\
     \ op,\n\tauto e\n>\nclass Segtree {\n\tprivate:\n\tstd::vector<S> dat;\n\tint\
-    \ N, sz;\n\n\tpublic:\n\tSegtree() {}\n\texplicit Segtree(int n) : segtree(std::vector<S>(n,\
-    \ e())) {}\n\texplicit Segtree(int n, const S &init) : segtree(std::vector<S>(n,\
+    \ N, sz;\n\n\tpublic:\n\tSegtree() {}\n\texplicit Segtree(int n) : Segtree(std::vector<S>(n,\
+    \ e())) {}\n\texplicit Segtree(int n, const S &init) : Segtree(std::vector<S>(n,\
     \ init)) {}\n\texplicit Segtree(const std::vector<S> &v) : N((int)v.size()) {\n\
     \t\tsz = 1;\n\t\twhile (sz < N) sz <<= 1;\n\t\tdat.assign(sz << 1, e());\n\t\t\
     for (int i = 0; i < N; ++i) dat[i + sz] = v[i];\n\t\tfor (int i = sz - 1; i >=\
     \ 1; --i) dat[i] = op(dat[i << 1], dat[i << 1 | 1]);\n\t}\n\ttemplate <class Inputit>\n\
-    \tSegtree(Inputit first, Inputit last) : segtree(std::vector<S>(first, last))\
+    \tSegtree(Inputit first, Inputit last) : Segtree(std::vector<S>(first, last))\
     \ {}\n\n\t// A[pos] \u2190 x \u3067\u66F4\u65B0\n\t// O(logN) time\n\tvoid set(int\
     \ pos, const S &x) {\n\t\tassert(0 <= pos && pos < N);\n\t\tpos += sz;\n\t\tdat[pos]\
     \ = x;\n\t\twhile (pos > 1) {\n\t\t\tpos >>= 1;\n\t\t\tdat[pos] = op(dat[pos <<\
@@ -147,7 +147,7 @@ data:
     if (!f(op(dat[r], s))) {\n\t\t\t\twhile (r < sz) {\n\t\t\t\t\tr = r << 1 | 1;\n\
     \t\t\t\t\tif (f(op(dat[r], s))) s = op(dat[r--], s);\n\t\t\t\t}\n\t\t\t\treturn\
     \ r + 1 - sz;\n\t\t\t}\n\t\t\ts = op(dat[r], s);\n\t\t} while ((r & -r) != r);\n\
-    \t\treturn 0;\n\t}\n};\n};\n#line 6 \"verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp\"\
+    \t\treturn 0;\n\t}\n};\n};\n#line 6 \"verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp\"\
     \n\nlong long op(long long a, long long b) { return a + b; }\nlong long e() {\
     \ return 0; }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tstd::vector<long\
     \ long> A(N);\n\tcpstd::input(A);\n\tcpstd::Segtree<long long, op, e> sg(A);\n\
@@ -168,15 +168,15 @@ data:
   - cpstl/other/Fastio.hpp
   - cpstl/ds/Segtree.hpp
   isVerificationFile: true
-  path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+  path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
   requiredBy: []
-  timestamp: '2025-07-27 21:23:31+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-07-27 21:32:06+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+documentation_of: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
-- /verify/verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp.html
-title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+- /verify/verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+- /verify/verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp.html
+title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
 ---

@@ -3,24 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
-    title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+    title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"cpstl/ds/Segtree.hpp\"\n\n#include <vector>\n\nnamespace\
     \ cpstd {\n\n// Segment Tree\n\ntemplate <\n\ttypename S,\n\tauto op,\n\tauto\
     \ e\n>\nclass Segtree {\n\tprivate:\n\tstd::vector<S> dat;\n\tint N, sz;\n\n\t\
-    public:\n\tSegtree() {}\n\texplicit Segtree(int n) : segtree(std::vector<S>(n,\
-    \ e())) {}\n\texplicit Segtree(int n, const S &init) : segtree(std::vector<S>(n,\
+    public:\n\tSegtree() {}\n\texplicit Segtree(int n) : Segtree(std::vector<S>(n,\
+    \ e())) {}\n\texplicit Segtree(int n, const S &init) : Segtree(std::vector<S>(n,\
     \ init)) {}\n\texplicit Segtree(const std::vector<S> &v) : N((int)v.size()) {\n\
     \t\tsz = 1;\n\t\twhile (sz < N) sz <<= 1;\n\t\tdat.assign(sz << 1, e());\n\t\t\
     for (int i = 0; i < N; ++i) dat[i + sz] = v[i];\n\t\tfor (int i = sz - 1; i >=\
     \ 1; --i) dat[i] = op(dat[i << 1], dat[i << 1 | 1]);\n\t}\n\ttemplate <class Inputit>\n\
-    \tSegtree(Inputit first, Inputit last) : segtree(std::vector<S>(first, last))\
+    \tSegtree(Inputit first, Inputit last) : Segtree(std::vector<S>(first, last))\
     \ {}\n\n\t// A[pos] \u2190 x \u3067\u66F4\u65B0\n\t// O(logN) time\n\tvoid set(int\
     \ pos, const S &x) {\n\t\tassert(0 <= pos && pos < N);\n\t\tpos += sz;\n\t\tdat[pos]\
     \ = x;\n\t\twhile (pos > 1) {\n\t\t\tpos >>= 1;\n\t\t\tdat[pos] = op(dat[pos <<\
@@ -69,12 +69,12 @@ data:
   code: "#pragma once\n\n#include <vector>\n\nnamespace cpstd {\n\n// Segment Tree\n\
     \ntemplate <\n\ttypename S,\n\tauto op,\n\tauto e\n>\nclass Segtree {\n\tprivate:\n\
     \tstd::vector<S> dat;\n\tint N, sz;\n\n\tpublic:\n\tSegtree() {}\n\texplicit Segtree(int\
-    \ n) : segtree(std::vector<S>(n, e())) {}\n\texplicit Segtree(int n, const S &init)\
-    \ : segtree(std::vector<S>(n, init)) {}\n\texplicit Segtree(const std::vector<S>\
+    \ n) : Segtree(std::vector<S>(n, e())) {}\n\texplicit Segtree(int n, const S &init)\
+    \ : Segtree(std::vector<S>(n, init)) {}\n\texplicit Segtree(const std::vector<S>\
     \ &v) : N((int)v.size()) {\n\t\tsz = 1;\n\t\twhile (sz < N) sz <<= 1;\n\t\tdat.assign(sz\
     \ << 1, e());\n\t\tfor (int i = 0; i < N; ++i) dat[i + sz] = v[i];\n\t\tfor (int\
     \ i = sz - 1; i >= 1; --i) dat[i] = op(dat[i << 1], dat[i << 1 | 1]);\n\t}\n\t\
-    template <class Inputit>\n\tSegtree(Inputit first, Inputit last) : segtree(std::vector<S>(first,\
+    template <class Inputit>\n\tSegtree(Inputit first, Inputit last) : Segtree(std::vector<S>(first,\
     \ last)) {}\n\n\t// A[pos] \u2190 x \u3067\u66F4\u65B0\n\t// O(logN) time\n\t\
     void set(int pos, const S &x) {\n\t\tassert(0 <= pos && pos < N);\n\t\tpos +=\
     \ sz;\n\t\tdat[pos] = x;\n\t\twhile (pos > 1) {\n\t\t\tpos >>= 1;\n\t\t\tdat[pos]\
@@ -125,10 +125,10 @@ data:
   isVerificationFile: false
   path: cpstl/ds/Segtree.hpp
   requiredBy: []
-  timestamp: '2025-07-27 21:22:16+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2025-07-27 21:31:37+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
+  - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
 documentation_of: cpstl/ds/Segtree.hpp
 layout: document
 redirect_from:
