@@ -23,6 +23,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Union-Find-Dsu.test.cpp
       title: verify/ds/lc-Union-Find-Dsu.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/ds/yuki-0875-Segtree.test.cpp
+      title: verify/ds/yuki-0875-Segtree.test.cpp
   - name: verify/other
     pages:
     - icon: ':heavy_check_mark:'

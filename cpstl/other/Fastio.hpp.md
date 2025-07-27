@@ -10,6 +10,9 @@ data:
     path: verify/ds/lc-Union-Find-Dsu.test.cpp
     title: verify/ds/lc-Union-Find-Dsu.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/ds/yuki-0875-Segtree.test.cpp
+    title: verify/ds/yuki-0875-Segtree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
     title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
   _isVerificationFailed: false
@@ -175,6 +178,7 @@ data:
   timestamp: '2025-07-27 21:22:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/ds/yuki-0875-Segtree.test.cpp
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
   - verify/ds/lc-Union-Find-Dsu.test.cpp
   - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp

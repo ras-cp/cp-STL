@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
     title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/yuki-0875-Segtree.test.cpp
+    title: verify/ds/yuki-0875-Segtree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -128,6 +131,7 @@ data:
   timestamp: '2025-07-27 21:31:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/ds/yuki-0875-Segtree.test.cpp
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
 documentation_of: cpstl/ds/Segtree.hpp
 layout: document
