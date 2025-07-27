@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/ras-cp/cpSTL/workflows/verify/badge.svg)](https://github.com/ras-cp/cpSTL/actions) [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://ras-cp.github.io/cp-STL/)
+[![Actions Status](https://github.com/ras-cp/cp-STL/workflows/verify/badge.svg)](https://github.com/ras-cp/cpSTL/actions) [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://ras-cp.github.io/cp-STL/)
 ## cpSTL
 ras (@cp_ras) の競技プログラミング向け C++ ライブラリです．利用は自己責任でお願いします．バグがあったら報告してくれると助かります．
 
