@@ -11,9 +11,9 @@ data:
       title: cpstl/ds/Segtree.hpp
   - name: cpstl/other
     pages:
-    - icon: ':heavy_check_mark:'
-      path: cpstl/other/fastio.hpp
-      title: Fast I/O
+    - icon: ':warning:'
+      path: cpstl/other/Fastio.hpp
+      title: cpstl/other/Fastio.hpp
   verificationCategories:
   - name: verify/ds
     pages:
@@ -25,7 +25,7 @@ data:
       title: verify/ds/lc_dsu.test.cpp
   - name: verify/other
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/other/lc_fastio.test.cpp
       title: verify/other/lc_fastio.test.cpp
 layout: toppage
