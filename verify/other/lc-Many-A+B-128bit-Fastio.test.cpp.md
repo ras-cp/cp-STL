@@ -1,9 +1,6 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: cpstl/ds/Dsu.hpp
-    title: Disjoint Set Union
   - icon: ':question:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
@@ -14,11 +11,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/unionfind
+    PROBLEM: https://judge.yosupo.jp/problem/many_aplusb_128bit
     links:
-    - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"verify/ds/lc-Union-Find-Dsu.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include <bits/stdc++.h>\n\
+    - https://judge.yosupo.jp/problem/many_aplusb_128bit
+  bundledCode: "#line 1 \"verify/other/lc-Many-A+B-128bit-Fastio.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n#include <bits/stdc++.h>\n\
     #line 2 \"cpstl/other/Fastio.hpp\"\nnamespace cpstd {\n\n// Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n\
     // https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\nstatic\
     \ constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
@@ -92,52 +89,25 @@ data:
     \ T>\nvoid print(H &&tgh, T &&... tgt) {\n\t_print(tgh);\n\tif (sizeof...(tgt))\
     \ _print(' ');\n\tprint(std::forward<T>(tgt)...);\n}\n\nvoid __attribute__((destructor))\
     \ _d() { flush(); }\n\n};\n\nusing Fastio::input;\nusing Fastio::print;\nusing\
-    \ Fastio::flush;\n\n};\n#line 2 \"cpstl/ds/Dsu.hpp\"\n\n#line 4 \"cpstl/ds/Dsu.hpp\"\
-    \n\nnamespace cpstd {\n\n// Disjoint Set Union\n// union by size + path compression\n\
-    \nclass Dsu {\n\tprivate:\n\tint _n;\n\tstd::vector<int> tree;\n\n\tint _leader(int\
-    \ x) {\n\t\treturn tree[x] < 0 ? x : tree[x] = _leader(tree[x]);\n\t}\n\n\tpublic:\n\
-    \tDsu() {}\n\texplicit Dsu(int n) : _n(n), tree(n, -1) {}\n\n\t// `x` \u306E\u5C5E\
-    \u3059\u308B\u96C6\u5408\u306E\u4EE3\u8868\u5143\u3092\u8FD4\u3059\n\t// amortized\
-    \ O(\u03B1(N)) time\n\tint leader(int x) {\n\t\tassert(0 <= x && x < _n);\n\t\t\
-    return tree[x] ? x : _leader(tree[x]);\n\t}\n\n\t// `a`, `b` \u306E\u5C5E\u3059\
-    \u308B\u96C6\u5408\u3092\u4F75\u5408\u3057\uFF0C\u5143\u3005\u7570\u306A\u308B\
-    \u96C6\u5408\u306B\u5C5E\u3057\u3066\u3044\u305F\u304B\u3092\u8FD4\u3059\n\t//\
-    \ amortized O(\u03B1(N)) time\n\tbool merge(int a, int b) {\n\t\tassert(0 <= a\
-    \ && a < _n);\n\t\tassert(0 <= b && b < _n);\n\t\ta = _leader(a), b = _leader(b);\n\
-    \t\tif (a == b) return false;\n\t\tif (tree[a] > tree[b]) std::swap(a, b);\n\t\
-    \ttree[a] += tree[b];\n\t\ttree[b] = a;\n\t\treturn true;\n\t}\n\n\t// `a` \u3068\
-    \ `b` \u304C\u540C\u3058\u96C6\u5408\u306B\u5C5E\u3059\u308B\u304B\u8FD4\u3059\
-    \n\t// amoritized O(\u03B1(N)) time\n\tbool same(int a, int b) {\n\t\tassert(0\
-    \ <= a && a < _n);\n\t\tassert(0 <= b && b < _n);\n\t\treturn _leader(a) == _leader(b);\n\
-    \t}\n\n\t// `x` \u304C\u5C5E\u3059\u308B\u96C6\u5408\u306E\u5927\u304D\u3055\u3092\
-    \u8FD4\u3059\n\t// amortized O(\u03B1(N)) time\n\tint size(int x) {\n\t\tassert(0\
-    \ <= x && x < _n);\n\t\treturn -tree[_leader(x)];\n\t}\n\n\t// \u96C6\u5408\u3054\
-    \u3068\u306B\u914D\u5217\u306B\u307E\u3068\u3081\u305F\u914D\u5217\u3092\u8FD4\
-    \u3059\n\t// O(N\u03B1(N)) time\n\tstd::vector<std::vector<int>> groups() {\n\t\
-    \tstd::vector<std::vector<int>> mem, res;\n\t\tfor (int i = 0; i < _n; ++i) mem[_leader(i)].push_back(i);\n\
-    \t\tfor (int i = 0; i < _n; ++i) {\n\t\t\tif (!mem[i].empty()) res.emplace_back(mem[i]);\n\
-    \t\t}\n\t\treturn res;\n\t}\n};\n};\n#line 6 \"verify/ds/lc-Union-Find-Dsu.test.cpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tcpstd::Dsu dsu(N);\n\t\
-    int t, u, v;\n\twhile (Q--) {\n\t\tcpstd::input(t, u, v);\n\t\tif (t == 0) dsu.merge(u,\
-    \ v);\n\t\telse cpstd::print((dsu.same(u, v) ? \"1\" : \"0\"));\n\t}\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
-    \ <bits/stdc++.h>\n#include \"cpstl/other/Fastio.hpp\"\n#include \"cpstl/ds/Dsu.hpp\"\
-    \n\nint main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tcpstd::Dsu dsu(N);\n\t\
-    int t, u, v;\n\twhile (Q--) {\n\t\tcpstd::input(t, u, v);\n\t\tif (t == 0) dsu.merge(u,\
-    \ v);\n\t\telse cpstd::print((dsu.same(u, v) ? \"1\" : \"0\"));\n\t}\n}\n"
+    \ Fastio::flush;\n\n};\n#line 5 \"verify/other/lc-Many-A+B-128bit-Fastio.test.cpp\"\
+    \n\nint main() {\n\tint T;\n\tcpstd::input(T);\n\t__int128 A, B;\n\twhile (T--)\
+    \ {\n\t\tcpstd::input(A, B);\n\t\tcpstd::print(A + B);\n\t}\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n\
+    #include <bits/stdc++.h>\n#include \"cpstl/other/Fastio.hpp\"\n\nint main() {\n\
+    \tint T;\n\tcpstd::input(T);\n\t__int128 A, B;\n\twhile (T--) {\n\t\tcpstd::input(A,\
+    \ B);\n\t\tcpstd::print(A + B);\n\t}\n}\n"
   dependsOn:
   - cpstl/other/Fastio.hpp
-  - cpstl/ds/Dsu.hpp
   isVerificationFile: true
-  path: verify/ds/lc-Union-Find-Dsu.test.cpp
+  path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
   requiredBy: []
-  timestamp: '2025-07-27 21:24:58+09:00'
+  timestamp: '2025-07-27 21:26:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/ds/lc-Union-Find-Dsu.test.cpp
+documentation_of: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/ds/lc-Union-Find-Dsu.test.cpp
-- /verify/verify/ds/lc-Union-Find-Dsu.test.cpp.html
-title: verify/ds/lc-Union-Find-Dsu.test.cpp
+- /verify/verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+- /verify/verify/other/lc-Many-A+B-128bit-Fastio.test.cpp.html
+title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
 ---

@@ -6,7 +6,7 @@ data:
     title: cpstl/ds/Segtree.hpp
   - icon: ':question:'
     path: cpstl/other/Fastio.hpp
-    title: cpstl/other/Fastio.hpp
+    title: Fast I/O
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true

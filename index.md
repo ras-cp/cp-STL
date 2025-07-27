@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
-      title: cpstl/ds/Dsu.hpp
+      title: Disjoint Set Union
     - icon: ':x:'
       path: cpstl/ds/Segtree.hpp
       title: cpstl/ds/Segtree.hpp
@@ -13,7 +13,7 @@ data:
     pages:
     - icon: ':question:'
       path: cpstl/other/Fastio.hpp
-      title: cpstl/other/Fastio.hpp
+      title: Fast I/O
   verificationCategories:
   - name: verify/ds
     pages:
@@ -25,8 +25,8 @@ data:
       title: verify/ds/lc-Union-Find-Dsu.test.cpp
   - name: verify/other
     pages:
-    - icon: ':x:'
-      path: verify/other/lc_fastio.test.cpp
-      title: verify/other/lc_fastio.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+      title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
 layout: toppage
 ---
