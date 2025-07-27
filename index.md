@@ -3,9 +3,9 @@ data:
   libraryCategories:
   - name: cpstl/ds
     pages:
-    - icon: ':heavy_check_mark:'
-      path: cpstl/ds/dsu.hpp
-      title: Disjoint Set Union
+    - icon: ':warning:'
+      path: cpstl/ds/Dsu.hpp
+      title: cpstl/ds/Dsu.hpp
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/segtree.hpp
       title: cpstl/ds/segtree.hpp
@@ -20,7 +20,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
       title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/ds/lc_dsu.test.cpp
       title: verify/ds/lc_dsu.test.cpp
   - name: verify/other
