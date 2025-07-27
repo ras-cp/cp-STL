@@ -1,6 +1,6 @@
 ---
 title: Disjoint Set Union
-documentation_of: //cpstl/ds/dsu.hpp
+documentation_of: //cpstl/ds/Dsu.hpp
 ---
 
 ## 概要
