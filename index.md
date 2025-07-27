@@ -6,9 +6,9 @@ data:
     - icon: ':warning:'
       path: cpstl/ds/Dsu.hpp
       title: cpstl/ds/Dsu.hpp
-    - icon: ':heavy_check_mark:'
-      path: cpstl/ds/segtree.hpp
-      title: cpstl/ds/segtree.hpp
+    - icon: ':warning:'
+      path: cpstl/ds/Segtree.hpp
+      title: cpstl/ds/Segtree.hpp
   - name: cpstl/other
     pages:
     - icon: ':heavy_check_mark:'
@@ -17,7 +17,7 @@ data:
   verificationCategories:
   - name: verify/ds
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
       title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
     - icon: ':x:'
