@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: cpstl/ds/Segtree.hpp
     title: cpstl/ds/Segtree.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: cpstl/other/Fastio.hpp
     title: cpstl/other/Fastio.hpp
   _extendedRequiredBy: []

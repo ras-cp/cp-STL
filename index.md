@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: cpstl/ds
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
       title: cpstl/ds/Dsu.hpp
     - icon: ':x:'
@@ -11,7 +11,7 @@ data:
       title: cpstl/ds/Segtree.hpp
   - name: cpstl/other
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: cpstl/other/Fastio.hpp
       title: cpstl/other/Fastio.hpp
   verificationCategories:
@@ -20,9 +20,9 @@ data:
     - icon: ':x:'
       path: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
       title: verify/ds/lc-Point-Add-Range-Sum-segtree.test.cpp
-    - icon: ':x:'
-      path: verify/ds/lc_dsu.test.cpp
-      title: verify/ds/lc_dsu.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/ds/lc-Union-Find-Dsu.test.cpp
+      title: verify/ds/lc-Union-Find-Dsu.test.cpp
   - name: verify/other
     pages:
     - icon: ':x:'

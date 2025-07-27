@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Union-Find-Dsu.test.cpp
+    title: verify/ds/lc-Union-Find-Dsu.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"cpstl/ds/Dsu.hpp\"\n\n#include <vector>\n\nnamespace cpstd\
@@ -63,8 +66,9 @@ data:
   path: cpstl/ds/Dsu.hpp
   requiredBy: []
   timestamp: '2025-07-27 21:21:37+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/ds/lc-Union-Find-Dsu.test.cpp
 documentation_of: cpstl/ds/Dsu.hpp
 layout: document
 redirect_from:
