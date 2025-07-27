@@ -18,8 +18,8 @@ class Segtree {
 
 	public:
 	Segtree() {}
-	explicit Segtree(int n) : segtree(std::vector<S>(n, e())) {}
-	explicit Segtree(int n, const S &init) : segtree(std::vector<S>(n, init)) {}
+	explicit Segtree(int n) : Segtree(std::vector<S>(n, e())) {}
+	explicit Segtree(int n, const S &init) : Segtree(std::vector<S>(n, init)) {}
 	explicit Segtree(const std::vector<S> &v) : N((int)v.size()) {
 		sz = 1;
 		while (sz < N) sz <<= 1;
@@ -28,7 +28,7 @@ class Segtree {
 		for (int i = sz - 1; i >= 1; --i) dat[i] = op(dat[i << 1], dat[i << 1 | 1]);
 	}
 	template <class Inputit>
-	Segtree(Inputit first, Inputit last) : segtree(std::vector<S>(first, last)) {}
+	Segtree(Inputit first, Inputit last) : Segtree(std::vector<S>(first, last)) {}
 
 	// A[pos] ← x で更新
 	// O(logN) time
