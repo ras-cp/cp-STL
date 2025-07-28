@@ -102,9 +102,6 @@ class Segtree {
 	// `r = n` または `f(op[l, r]) = false`
 	// これらを両方満たす `r` を返す (`f` が単調なら `f(op[l, r)) = true` となる最大の `r`)
 	// O(logN) time
-	template <auto f>
-	int max_right(int l) const { return max_right(l, [](const S& x) -> bool { return f(x); }); }
-
 	template <typename F>
 	int max_right(int l, const F& f) const {
 		assert(0 <= l && l <= N);
@@ -130,9 +127,6 @@ class Segtree {
 	// `l = 0` または `f(op[l - 1, r)) = false`
 	// これらを両方満たす `l` を返す (`f` が単調なら `f(op[l, r)) = true` となる最小の `l`)
 	// O(logN) time
-	template <auto f>
-	int min_left(int r) const { return min_left(r, [](S x) -> bool { return f(x); }); }
-
 	template <typename F>
 	int min_left(int r, F f) const {
 		assert(0 <= r && r <= N);
