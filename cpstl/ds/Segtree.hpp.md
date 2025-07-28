@@ -165,6 +165,7 @@ template <typename S, auto op, auto e>
 3. 長さ `N`，初期値 `init` で初期化．
 4. `v` で初期化．
 5. 範囲 `[first, last)` の値で初期化．
+
 ### 計算量
 1. $\mathrm{O}(1)$ time
 2. $\mathrm{O}(N)$ time
@@ -177,6 +178,7 @@ template <typename S, auto op, auto e>
 void set(int pos, const S &x)
 ```
 `A[pos] = x` で更新．
+
 ### 計算量
 - $\mathrm{O}(\log{N})$ time
 
@@ -185,6 +187,7 @@ void set(int pos, const S &x)
 void add(int pos, const S &x)
 ```
 `A[pos] += x` で更新．`S` に `operator+=` が定義されている必要がある．
+
 ### 計算量
 - $\mathrm{O}(\log{N})$ time
 
@@ -193,6 +196,7 @@ void add(int pos, const S &x)
 template <typename F, auto mapping> void set(int pos, const F &f)
 ```
 `A[pos] = mapping(f, A[pos])` で更新．`mapping` は `S mapping(F, S)` の形で定義されている必要がある (lambda 式でも OK)．
+
 ### 計算量
 - $\mathrm{O}(\log{N})$ time
 
@@ -201,6 +205,7 @@ template <typename F, auto mapping> void set(int pos, const F &f)
 const S& get(int pos) const
 ```
 `A[pos]` を返す．
+
 ### 計算量
 - $\mathrm{O}(1)$ time
 
@@ -209,6 +214,7 @@ const S& get(int pos) const
 const S& get(int pos) const noexcept
 ```
 `A[pos]` を返す．
+
 ### 計算量
 - $\mathrm{O}(1)$ time
 
@@ -217,6 +223,7 @@ const S& get(int pos) const noexcept
 S fold(int l, int r) const
 ```
 `op[l, r)` を返す．
+
 ### 計算量
 - $\mathrm{O}(\log{N})$ time
 
@@ -225,6 +232,7 @@ S fold(int l, int r) const
 S all_fold() const
 ```
 `op[1, N]` を返す．
+
 ### 計算量
 - $\mathrm{O}(1)$ time
 
@@ -236,6 +244,7 @@ S all_fold() const
 - `r = n` または `f(op[l, r]) = false`
 
 これらを両方満たす `r` を返す．`f` が単調な場合，`f(op[l, r)) = true` となる最大の `r` が返ってくる．
+
 ### 計算量
 - $\mathrm{O}(\log{N})$ time
 
@@ -247,5 +256,6 @@ S all_fold() const
 - `l = 0` または `f(op[l - 1, r)) = false`
 
 これらを両方満たす `r` を返す．`f` が単調な場合，`f(op[l, r)) = true` となる最小の `l` が返ってくる．
+
 ### 計算量
 - $\mathrm{O}(\log{N})$ time
