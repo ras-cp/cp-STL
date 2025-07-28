@@ -1,6 +1,6 @@
 ---
 title: Segment Tree
-documentation_of: /cpstl/ds/Segtree.hpp
+documentation_of: //cpstl/ds/Segtree.hpp
 ---
 
 # 概要
