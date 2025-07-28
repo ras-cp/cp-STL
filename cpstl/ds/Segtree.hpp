@@ -128,7 +128,7 @@ class Segtree {
 	// これらを両方満たす `l` を返す (`f` が単調なら `f(op[l, r)) = true` となる最小の `l`)
 	// O(logN) time
 	template <typename F>
-	int min_left(int r, F f) const {
+	int min_left(int r, const F &f) const {
 		assert(0 <= r && r <= N);
 		assert(f(e()));
 		if (r == 0) return 0;
