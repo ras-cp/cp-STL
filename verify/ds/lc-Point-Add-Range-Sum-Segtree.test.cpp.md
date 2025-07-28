@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: cpstl/ds/Segtree.hpp
-    title: cpstl/ds/Segtree.hpp
+    title: Segment Tree
   - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
