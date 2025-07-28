@@ -59,13 +59,13 @@ data:
     // `l = 0` \u307E\u305F\u306F `f(op[l - 1, r)) = false`\n\t// \u3053\u308C\u3089\
     \u3092\u4E21\u65B9\u6E80\u305F\u3059 `l` \u3092\u8FD4\u3059 (`f` \u304C\u5358\u8ABF\
     \u306A\u3089 `f(op[l, r)) = true` \u3068\u306A\u308B\u6700\u5C0F\u306E `l`)\n\t\
-    // O(logN) time\n\ttemplate <typename F>\n\tint min_left(int r, F f) const {\n\
-    \t\tassert(0 <= r && r <= N);\n\t\tassert(f(e()));\n\t\tif (r == 0) return 0;\n\
-    \t\tr += sz;\n\t\tS s = e();\n\t\tdo {\n\t\t\t--r;\n\t\t\twhile (r > 1 && (r &\
-    \ 1)) r >>= 1;\n\t\t\tif (!f(op(dat[r], s))) {\n\t\t\t\twhile (r < sz) {\n\t\t\
-    \t\t\tr = r << 1 | 1;\n\t\t\t\t\tif (f(op(dat[r], s))) s = op(dat[r--], s);\n\t\
-    \t\t\t}\n\t\t\t\treturn r + 1 - sz;\n\t\t\t}\n\t\t\ts = op(dat[r], s);\n\t\t}\
-    \ while ((r & -r) != r);\n\t\treturn 0;\n\t}\n};\n};\n"
+    // O(logN) time\n\ttemplate <typename F>\n\tint min_left(int r, const F &f) const\
+    \ {\n\t\tassert(0 <= r && r <= N);\n\t\tassert(f(e()));\n\t\tif (r == 0) return\
+    \ 0;\n\t\tr += sz;\n\t\tS s = e();\n\t\tdo {\n\t\t\t--r;\n\t\t\twhile (r > 1 &&\
+    \ (r & 1)) r >>= 1;\n\t\t\tif (!f(op(dat[r], s))) {\n\t\t\t\twhile (r < sz) {\n\
+    \t\t\t\t\tr = r << 1 | 1;\n\t\t\t\t\tif (f(op(dat[r], s))) s = op(dat[r--], s);\n\
+    \t\t\t\t}\n\t\t\t\treturn r + 1 - sz;\n\t\t\t}\n\t\t\ts = op(dat[r], s);\n\t\t\
+    } while ((r & -r) != r);\n\t\treturn 0;\n\t}\n};\n};\n"
   code: "#pragma once\n\n#include <vector>\n\nnamespace cpstd {\n\n// Segment Tree\n\
     \ntemplate <\n\ttypename S,\n\tauto op,\n\tauto e\n>\nclass Segtree {\n\tprivate:\n\
     \tstd::vector<S> dat;\n\tint N, sz;\n\n\tpublic:\n\tSegtree() {}\n\texplicit Segtree(int\
@@ -111,9 +111,9 @@ data:
     \ - 1, r)) = false`\n\t// \u3053\u308C\u3089\u3092\u4E21\u65B9\u6E80\u305F\u3059\
     \ `l` \u3092\u8FD4\u3059 (`f` \u304C\u5358\u8ABF\u306A\u3089 `f(op[l, r)) = true`\
     \ \u3068\u306A\u308B\u6700\u5C0F\u306E `l`)\n\t// O(logN) time\n\ttemplate <typename\
-    \ F>\n\tint min_left(int r, F f) const {\n\t\tassert(0 <= r && r <= N);\n\t\t\
-    assert(f(e()));\n\t\tif (r == 0) return 0;\n\t\tr += sz;\n\t\tS s = e();\n\t\t\
-    do {\n\t\t\t--r;\n\t\t\twhile (r > 1 && (r & 1)) r >>= 1;\n\t\t\tif (!f(op(dat[r],\
+    \ F>\n\tint min_left(int r, const F &f) const {\n\t\tassert(0 <= r && r <= N);\n\
+    \t\tassert(f(e()));\n\t\tif (r == 0) return 0;\n\t\tr += sz;\n\t\tS s = e();\n\
+    \t\tdo {\n\t\t\t--r;\n\t\t\twhile (r > 1 && (r & 1)) r >>= 1;\n\t\t\tif (!f(op(dat[r],\
     \ s))) {\n\t\t\t\twhile (r < sz) {\n\t\t\t\t\tr = r << 1 | 1;\n\t\t\t\t\tif (f(op(dat[r],\
     \ s))) s = op(dat[r--], s);\n\t\t\t\t}\n\t\t\t\treturn r + 1 - sz;\n\t\t\t}\n\t\
     \t\ts = op(dat[r], s);\n\t\t} while ((r & -r) != r);\n\t\treturn 0;\n\t}\n};\n\
@@ -122,7 +122,7 @@ data:
   isVerificationFile: false
   path: cpstl/ds/Segtree.hpp
   requiredBy: []
-  timestamp: '2025-07-29 00:12:23+09:00'
+  timestamp: '2025-07-29 00:18:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ds/yuki-0875-Segtree.test.cpp
