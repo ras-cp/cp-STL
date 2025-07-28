@@ -127,27 +127,24 @@ data:
     \t// `r = n` \u307E\u305F\u306F `f(op[l, r]) = false`\n\t// \u3053\u308C\u3089\
     \u3092\u4E21\u65B9\u6E80\u305F\u3059 `r` \u3092\u8FD4\u3059 (`f` \u304C\u5358\u8ABF\
     \u306A\u3089 `f(op[l, r)) = true` \u3068\u306A\u308B\u6700\u5927\u306E `r`)\n\t\
-    // O(logN) time\n\ttemplate <auto f>\n\tint max_right(int l) const { return max_right(l,\
-    \ [](const S& x) -> bool { return f(x); }); }\n\n\ttemplate <typename F>\n\tint\
-    \ max_right(int l, const F& f) const {\n\t\tassert(0 <= l && l <= N);\n\t\tassert(f(e()));\n\
-    \t\tif (l == N) return N;\n\t\tl += sz;\n\t\tS s = e();\n\t\tdo {\n\t\t\twhile\
-    \ (!(l & 1)) l >>= 1;\n\t\t\tif (!f(op(s, dat[l]))) {\n\t\t\t\twhile (l < sz)\
-    \ {\n\t\t\t\t\tl <<= 1;\n\t\t\t\t\tif (f(op(s, dat[l]))) s = op(s, dat[l++]);\n\
-    \t\t\t\t}\n\t\t\t\treturn l - sz;\n\t\t\t}\n\t\t\ts = op(s, dat[l++]);\n\t\t}\
-    \ while ((l & -l) != l);\n\t\treturn N;\n\t}\n\n\t// `l = r` \u307E\u305F\u306F\
-    \ `f(op[l, r)) = true`\n\t// `l = 0` \u307E\u305F\u306F `f(op[l - 1, r)) = false`\n\
-    \t// \u3053\u308C\u3089\u3092\u4E21\u65B9\u6E80\u305F\u3059 `l` \u3092\u8FD4\u3059\
-    \ (`f` \u304C\u5358\u8ABF\u306A\u3089 `f(op[l, r)) = true` \u3068\u306A\u308B\u6700\
-    \u5C0F\u306E `l`)\n\t// O(logN) time\n\ttemplate <auto f>\n\tint min_left(int\
-    \ r) const { return min_left(r, [](S x) -> bool { return f(x); }); }\n\n\ttemplate\
-    \ <typename F>\n\tint min_left(int r, F f) const {\n\t\tassert(0 <= r && r <=\
-    \ N);\n\t\tassert(f(e()));\n\t\tif (r == 0) return 0;\n\t\tr += sz;\n\t\tS s =\
-    \ e();\n\t\tdo {\n\t\t\t--r;\n\t\t\twhile (r > 1 && (r & 1)) r >>= 1;\n\t\t\t\
-    if (!f(op(dat[r], s))) {\n\t\t\t\twhile (r < sz) {\n\t\t\t\t\tr = r << 1 | 1;\n\
-    \t\t\t\t\tif (f(op(dat[r], s))) s = op(dat[r--], s);\n\t\t\t\t}\n\t\t\t\treturn\
-    \ r + 1 - sz;\n\t\t\t}\n\t\t\ts = op(dat[r], s);\n\t\t} while ((r & -r) != r);\n\
-    \t\treturn 0;\n\t}\n};\n};\n#line 5 \"verify/ds/yuki-0875-Segtree.test.cpp\"\n\
-    \nint op(int a, int b) { return std::min(a, b); }\nint e() { return 100000000;\
+    // O(logN) time\n\ttemplate <typename F>\n\tint max_right(int l, const F& f) const\
+    \ {\n\t\tassert(0 <= l && l <= N);\n\t\tassert(f(e()));\n\t\tif (l == N) return\
+    \ N;\n\t\tl += sz;\n\t\tS s = e();\n\t\tdo {\n\t\t\twhile (!(l & 1)) l >>= 1;\n\
+    \t\t\tif (!f(op(s, dat[l]))) {\n\t\t\t\twhile (l < sz) {\n\t\t\t\t\tl <<= 1;\n\
+    \t\t\t\t\tif (f(op(s, dat[l]))) s = op(s, dat[l++]);\n\t\t\t\t}\n\t\t\t\treturn\
+    \ l - sz;\n\t\t\t}\n\t\t\ts = op(s, dat[l++]);\n\t\t} while ((l & -l) != l);\n\
+    \t\treturn N;\n\t}\n\n\t// `l = r` \u307E\u305F\u306F `f(op[l, r)) = true`\n\t\
+    // `l = 0` \u307E\u305F\u306F `f(op[l - 1, r)) = false`\n\t// \u3053\u308C\u3089\
+    \u3092\u4E21\u65B9\u6E80\u305F\u3059 `l` \u3092\u8FD4\u3059 (`f` \u304C\u5358\u8ABF\
+    \u306A\u3089 `f(op[l, r)) = true` \u3068\u306A\u308B\u6700\u5C0F\u306E `l`)\n\t\
+    // O(logN) time\n\ttemplate <typename F>\n\tint min_left(int r, F f) const {\n\
+    \t\tassert(0 <= r && r <= N);\n\t\tassert(f(e()));\n\t\tif (r == 0) return 0;\n\
+    \t\tr += sz;\n\t\tS s = e();\n\t\tdo {\n\t\t\t--r;\n\t\t\twhile (r > 1 && (r &\
+    \ 1)) r >>= 1;\n\t\t\tif (!f(op(dat[r], s))) {\n\t\t\t\twhile (r < sz) {\n\t\t\
+    \t\t\tr = r << 1 | 1;\n\t\t\t\t\tif (f(op(dat[r], s))) s = op(dat[r--], s);\n\t\
+    \t\t\t}\n\t\t\t\treturn r + 1 - sz;\n\t\t\t}\n\t\t\ts = op(dat[r], s);\n\t\t}\
+    \ while ((r & -r) != r);\n\t\treturn 0;\n\t}\n};\n};\n#line 5 \"verify/ds/yuki-0875-Segtree.test.cpp\"\
+    \n\nint op(int a, int b) { return std::min(a, b); }\nint e() { return 100000000;\
     \ }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tstd::vector<int> A(N);\n\
     \tcpstd::input(A);\n\tcpstd::Segtree<int, op, e> sg(A);\n\tint t, l, r, lv;\n\t\
     while (Q--) {\n\t\tcpstd::input(t, l, r);\n\t\tif (t == 1) {\n\t\t\tlv = sg[--l];\n\
@@ -173,7 +170,7 @@ data:
   isVerificationFile: true
   path: verify/ds/yuki-0875-Segtree.test.cpp
   requiredBy: []
-  timestamp: '2025-07-28 01:50:02+09:00'
+  timestamp: '2025-07-29 00:12:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ds/yuki-0875-Segtree.test.cpp
