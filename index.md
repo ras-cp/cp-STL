@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
       title: Disjoint Set Union
+    - icon: ':warning:'
+      path: cpstl/ds/DualSegtree.hpp
+      title: cpstl/ds/DualSegtree.hpp
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Segtree.hpp
       title: Segment Tree
