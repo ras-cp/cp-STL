@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: cpstl/ds/Dsu.hpp
     title: Disjoint Set Union
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
   _extendedRequiredBy: []

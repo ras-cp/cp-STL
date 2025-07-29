@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':x:'
+    path: cpstl/ds/DualSegtree.hpp
+    title: cpstl/ds/DualSegtree.hpp
   - icon: ':question:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/many_aplusb_128bit
-    links:
-    - https://judge.yosupo.jp/problem/many_aplusb_128bit
-  bundledCode: "#line 1 \"verify/other/lc-Many-A+B-128bit-Fastio.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n#include <bits/stdc++.h>\n\
-    #line 2 \"cpstl/other/Fastio.hpp\"\nnamespace cpstd {\n\n// Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n\
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "#line 1 \"verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\n\
+    \n#include <bits/stdc++.h>\n#include <atcoder/all>\n#line 2 \"cpstl/other/Fastio.hpp\"\
+    \nnamespace cpstd {\n\n// Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n\
     // https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\nstatic\
     \ constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
     \ out[100];\nuint32_t pil = 0, pir = 0, por = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\
@@ -89,25 +89,67 @@ data:
     \ T>\nvoid print(H &&tgh, T &&... tgt) {\n\t_print(tgh);\n\tif (sizeof...(tgt))\
     \ _print(' ');\n\tprint(std::forward<T>(tgt)...);\n}\n\nvoid __attribute__((destructor))\
     \ _d() { flush(); }\n\n};\n\nusing Fastio::input;\nusing Fastio::print;\nusing\
-    \ Fastio::flush;\n\n};\n#line 5 \"verify/other/lc-Many-A+B-128bit-Fastio.test.cpp\"\
-    \n\nint main() {\n\tint T;\n\tcpstd::input(T);\n\t__int128 A, B;\n\twhile (T--)\
-    \ {\n\t\tcpstd::input(A, B);\n\t\tcpstd::print(A + B);\n\t}\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n\
-    #include <bits/stdc++.h>\n#include \"cpstl/other/Fastio.hpp\"\n\nint main() {\n\
-    \tint T;\n\tcpstd::input(T);\n\t__int128 A, B;\n\twhile (T--) {\n\t\tcpstd::input(A,\
-    \ B);\n\t\tcpstd::print(A + B);\n\t}\n}\n"
+    \ Fastio::flush;\n\n};\n#line 2 \"cpstl/ds/DualSegtree.hpp\"\n\n#line 4 \"cpstl/ds/DualSegtree.hpp\"\
+    \n#include <bit>\n\nnamespace cpstd {\n\n// Dual Segment Tree\n\ntemplate <\n\t\
+    typename F,\n\tauto composition,\n\tauto id\n>\nclass DualSegtree {\n\tprivate:\n\
+    \tstd::vector<F> lazy;\n\tint N, sz, log;\n\n\tvoid pushdown(int pos) {\n\t\t\
+    for (int i = log; i >= 1; --i) {\n\t\t\tint p = pos >> i;\n\t\t\tlazy[p << 1]\
+    \ = composition(lazy[p], lazy[p << 1]);\n\t\t\tlazy[p << 1 | 1] = composition(lazy[p],\
+    \ lazy[p << 1 | 1]);\n\t\t\tlazy[p] = id();\n\t\t}\n\t}\n\n\tpublic:\n\tDualSegtree()\
+    \ {}\n\texplicit DualSegtree(int n) : N(n) {\n\t\tsz = std::bit_ceil((unsigned\
+    \ int)(N));\n\t\tlog = std::bit_width((unsigned int)(sz)) - 1;\n\t\tlazy.assign(sz\
+    \ << 1, id());\n\t}\n\n\t// A[pos] \u3078\u306E\u4F5C\u7528\u7D20\u3092 f \u306B\
+    \u3059\u308B\n\t// O(logN) time\n\tvoid set(int pos, const F &f) {\n\t\tassert(0\
+    \ <= pos && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\tlazy[pos] = f;\n\
+    \t}\n\n\t// A[pos] \u306B f \u3092\u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN)\
+    \ time\n\tvoid apply(int pos, const F &f) {\n\t\tassert(0 <= pos && pos < N);\n\
+    \t\tpos += sz;\n\t\tpushdown(pos);\n\t\tlazy[pos] = composition(f, lazy[pos]);\n\
+    \t}\n\n\t// A[l, r) \u306B f \u3092\u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN)\
+    \ time\n\tvoid apply(int l, int r, const F &f) {\n\t\tassert(0 <= l && l <= r\
+    \ && r <= N);\n\t\tif (l == r) return;\n\t\tl += sz, r += sz;\n\t\tpushdown(l),\
+    \ pushdown(r - 1);\n\t\tfor (; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lazy[l]\
+    \ = composition(f, lazy[l]), ++l;\n\t\t\tif (r & 1) --r, lazy[r] = composition(f,\
+    \ lazy[r]);\n\t\t}\n\t}\n\n\t// A[pos] \u306E\u4F5C\u7528\u7D20\u3092\u8FD4\u3059\
+    \n\t// O(logN) time\n\tF get(int pos) {\n\t\tassert(0 <= pos && pos < N);\n\t\t\
+    pos += sz;\n\t\tpushdown(pos);\n\t\treturn lazy[pos];\n\t}\n\n\t// A[pos] \u306E\
+    \u4F5C\u7528\u7D20\u3092\u8FD4\u3059\n\t// O(logN) time\n\tF operator[](int pos)\
+    \ noexcept {\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\treturn lazy[pos];\n\t}\n\
+    };\n};\n#line 7 \"verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp\"\n\
+    \nusing mint = atcoder::modint998244353;\nusing F = std::pair<mint, mint>;\nF\
+    \ composition(F g, F f) { return {f.first * g.first, f.second * g.first + g.second};\
+    \ }\nF id() { return {1, 0}; }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N,\
+    \ Q);\n\tstd::vector<mint> A(N);\n\tint a;\n\tfor (int i = 0; i < N; ++i) {\n\t\
+    \tcpstd::input(a);\n\t\tA[i] = a;\n\t}\n\tcpstd::DualSegtree<F, composition, id>\
+    \ sg(N);\n\tint t, l, r, b, c, p;\n\twhile (Q--) {\n\t\tcpstd::input(t);\n\t\t\
+    if (t == 0) {\n\t\t\tcpstd::input(l, r, b, c);\n\t\t\tsg.apply(l, r, {mint(b),\
+    \ mint(c)});\n\t\t}\n\t\telse {\n\t\t\tcpstd::input(p);\n\t\t\tF act = sg[p];\n\
+    \t\t\tcpstd::print((act.first * A[p] + act.second).val());\n\t\t}\n\t}\n\treturn\
+    \ 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\
+    \n\n#include <bits/stdc++.h>\n#include <atcoder/all>\n#include \"cpstl/other/Fastio.hpp\"\
+    \n#include \"cpstl/ds/DualSegtree.hpp\"\n\nusing mint = atcoder::modint998244353;\n\
+    using F = std::pair<mint, mint>;\nF composition(F g, F f) { return {f.first *\
+    \ g.first, f.second * g.first + g.second}; }\nF id() { return {1, 0}; }\n\nint\
+    \ main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tstd::vector<mint> A(N);\n\t\
+    int a;\n\tfor (int i = 0; i < N; ++i) {\n\t\tcpstd::input(a);\n\t\tA[i] = a;\n\
+    \t}\n\tcpstd::DualSegtree<F, composition, id> sg(N);\n\tint t, l, r, b, c, p;\n\
+    \twhile (Q--) {\n\t\tcpstd::input(t);\n\t\tif (t == 0) {\n\t\t\tcpstd::input(l,\
+    \ r, b, c);\n\t\t\tsg.apply(l, r, {mint(b), mint(c)});\n\t\t}\n\t\telse {\n\t\t\
+    \tcpstd::input(p);\n\t\t\tF act = sg[p];\n\t\t\tcpstd::print((act.first * A[p]\
+    \ + act.second).val());\n\t\t}\n\t}\n\treturn 0;\n}\n"
   dependsOn:
   - cpstl/other/Fastio.hpp
+  - cpstl/ds/DualSegtree.hpp
   isVerificationFile: true
-  path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+  path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   requiredBy: []
-  timestamp: '2025-07-27 21:26:01+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-07-30 01:48:55+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+documentation_of: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
-- /verify/verify/other/lc-Many-A+B-128bit-Fastio.test.cpp.html
-title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+- /verify/verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
+- /verify/verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp.html
+title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
 ---
