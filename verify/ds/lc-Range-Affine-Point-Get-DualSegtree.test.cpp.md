@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: cpstl/ds/DualSegtree.hpp
-    title: cpstl/ds/DualSegtree.hpp
+    title: Dual Segment Tree
   - icon: ':heavy_check_mark:'
     path: cpstl/math/StaticModint.hpp
     title: cpstl/math/StaticModint.hpp

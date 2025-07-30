@@ -8,7 +8,7 @@ data:
       title: Disjoint Set Union
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/DualSegtree.hpp
-      title: cpstl/ds/DualSegtree.hpp
+      title: Dual Segment Tree
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Segtree.hpp
       title: Segment Tree
