@@ -1,4 +1,19 @@
 #pragma once
+
+#include <cstdint>
+#include <cstdio>
+#include <cstddef>
+#include <string>
+#include <type_traits>
+#include <utility>
+#include <tuple>
+#include <array>
+#include <vector>
+#include <any>
+#include <ios>
+#include <iomanip>
+#include "cpstl/math/StaticModint.hpp"
+
 namespace cpstd {
 
 // Fast I/O
@@ -102,8 +117,11 @@ void _input(unsigned long long &dest) { input_int(dest); }
 void _input(__int128 &dest) { input_int(dest); }
 void _input(unsigned __int128 &dest) { input_int(dest); }
 
+template <uint32_t m>
+void _input(cpstd::StaticModint<m> &dest) { long long a; _input(a); dest = a; }
+
 template <typename T, typename U>
-void _input(std::pair<T, U> &dest) { return _input(dest.first), _input(dest.second); }
+void _input(std::pair<T, U> &dest) { _input(dest.first), _input(dest.second); }
 
 template <std::size_t N = 0, typename T>
 void input_tuple(T &t) {
@@ -186,6 +204,9 @@ void _print(unsigned __int128 tg) { print_int(tg); }
 void _print(float tg) { print_real(tg); }
 void _print(double tg) { print_real(tg); }
 void _print(long double tg) { print_real(tg); }
+
+template <uint32_t m>
+void _print(StaticModint<m> tg) { print_int(tg.val()); }
 
 template <typename T, typename U>
 void _print(const std::pair<T, U> tg) {
