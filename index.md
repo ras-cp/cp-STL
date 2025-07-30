@@ -6,15 +6,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
       title: Disjoint Set Union
-    - icon: ':warning:'
+    - icon: ':x:'
       path: cpstl/ds/DualSegtree.hpp
       title: cpstl/ds/DualSegtree.hpp
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Segtree.hpp
       title: Segment Tree
+  - name: cpstl/math
+    pages:
+    - icon: ':x:'
+      path: cpstl/math/StaticModint.hpp
+      title: cpstl/math/StaticModint.hpp
   - name: cpstl/other
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: cpstl/other/Fastio.hpp
       title: Fast I/O
   verificationCategories:
