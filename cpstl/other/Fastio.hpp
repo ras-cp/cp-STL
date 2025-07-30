@@ -206,7 +206,7 @@ void _print(double tg) { print_real(tg); }
 void _print(long double tg) { print_real(tg); }
 
 template <uint32_t m>
-void _print(StaticModint<m> tg) { print_int(tg.val()); }
+void _print(cpstd::StaticModint<m> tg) { print_int(tg.val()); }
 
 template <typename T, typename U>
 void _print(const std::pair<T, U> tg) {
