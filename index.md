@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
       title: Disjoint Set Union
-    - icon: ':x:'
+    - icon: ':warning:'
       path: cpstl/ds/DualSegtree.hpp
       title: cpstl/ds/DualSegtree.hpp
     - icon: ':heavy_check_mark:'
@@ -14,7 +14,7 @@ data:
       title: Segment Tree
   - name: cpstl/other
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/other/Fastio.hpp
       title: Fast I/O
   verificationCategories:

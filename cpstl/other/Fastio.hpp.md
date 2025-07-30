@@ -6,9 +6,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
     title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-  - icon: ':x:'
-    path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-    title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Union-Find-Dsu.test.cpp
     title: verify/ds/lc-Union-Find-Dsu.test.cpp
@@ -18,9 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
     title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://judge.yosupo.jp/submission/21623
@@ -179,10 +176,9 @@ data:
   path: cpstl/other/Fastio.hpp
   requiredBy: []
   timestamp: '2025-07-27 21:22:57+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ds/yuki-0875-Segtree.test.cpp
-  - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
   - verify/ds/lc-Union-Find-Dsu.test.cpp
   - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp

@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-    title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"cpstl/ds/DualSegtree.hpp\"\n\n#include <vector>\n#include\
@@ -66,9 +63,8 @@ data:
   path: cpstl/ds/DualSegtree.hpp
   requiredBy: []
   timestamp: '2025-07-30 01:48:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: cpstl/ds/DualSegtree.hpp
 layout: document
 redirect_from:
