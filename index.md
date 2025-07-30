@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
       title: Disjoint Set Union
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/ds/DualSegtree.hpp
       title: cpstl/ds/DualSegtree.hpp
     - icon: ':heavy_check_mark:'
@@ -14,12 +14,12 @@ data:
       title: Segment Tree
   - name: cpstl/math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/math/StaticModint.hpp
       title: cpstl/math/StaticModint.hpp
   - name: cpstl/other
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/other/Fastio.hpp
       title: Fast I/O
   verificationCategories:
@@ -28,7 +28,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
       title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
       title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
     - icon: ':heavy_check_mark:'

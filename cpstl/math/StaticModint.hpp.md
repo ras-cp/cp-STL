@@ -1,14 +1,29 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: cpstl/other/Fastio.hpp
+    title: Fast I/O
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+    title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
     title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Union-Find-Dsu.test.cpp
+    title: verify/ds/lc-Union-Find-Dsu.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/yuki-0875-Segtree.test.cpp
+    title: verify/ds/yuki-0875-Segtree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+    title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://hackmd.io/@tatyam-prime/rkVCOcwQn
@@ -106,11 +121,16 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: cpstl/math/StaticModint.hpp
-  requiredBy: []
+  requiredBy:
+  - cpstl/other/Fastio.hpp
   timestamp: '2025-07-30 22:35:35+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/ds/yuki-0875-Segtree.test.cpp
   - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
+  - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  - verify/ds/lc-Union-Find-Dsu.test.cpp
+  - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
 documentation_of: cpstl/math/StaticModint.hpp
 layout: document
 redirect_from:
