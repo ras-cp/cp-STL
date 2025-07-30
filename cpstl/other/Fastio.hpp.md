@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: cpstl/math/StaticModint.hpp
-    title: cpstl/math/StaticModint.hpp
+    title: Static Modint
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'

@@ -16,7 +16,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: cpstl/math/StaticModint.hpp
-      title: cpstl/math/StaticModint.hpp
+      title: Static Modint
   - name: cpstl/other
     pages:
     - icon: ':heavy_check_mark:'

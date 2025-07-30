@@ -6,7 +6,7 @@ data:
     title: Disjoint Set Union
   - icon: ':heavy_check_mark:'
     path: cpstl/math/StaticModint.hpp
-    title: cpstl/math/StaticModint.hpp
+    title: Static Modint
   - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
