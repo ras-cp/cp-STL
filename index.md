@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/DualSegtree.hpp
       title: Dual Segment Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: cpstl/ds/LazySegtree.hpp
       title: cpstl/ds/LazySegtree.hpp
     - icon: ':heavy_check_mark:'
@@ -34,6 +34,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
       title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+      title: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Union-Find-Dsu.test.cpp
       title: verify/ds/lc-Union-Find-Dsu.test.cpp

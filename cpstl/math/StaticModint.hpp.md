@@ -13,6 +13,9 @@ data:
     path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
     title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+    title: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Union-Find-Dsu.test.cpp
     title: verify/ds/lc-Union-Find-Dsu.test.cpp
   - icon: ':heavy_check_mark:'
@@ -130,6 +133,7 @@ data:
   - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
   - verify/ds/lc-Union-Find-Dsu.test.cpp
+  - verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
   - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
 documentation_of: cpstl/math/StaticModint.hpp
 layout: document

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+    title: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"cpstl/ds/LazySegtree.hpp\"\n\n#include <vector>\n#include\
@@ -165,8 +168,9 @@ data:
   path: cpstl/ds/LazySegtree.hpp
   requiredBy: []
   timestamp: '2025-08-01 01:53:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
 documentation_of: cpstl/ds/LazySegtree.hpp
 layout: document
 redirect_from:
