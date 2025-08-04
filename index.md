@@ -11,7 +11,7 @@ data:
       title: Dual Segment Tree
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/LazySegtree.hpp
-      title: cpstl/ds/LazySegtree.hpp
+      title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Segtree.hpp
       title: Segment Tree
