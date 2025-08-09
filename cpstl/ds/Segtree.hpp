@@ -1,10 +1,10 @@
 #pragma once
 
-#include <vector>
+#include "cpstl/other/Template.hpp"
 
 namespace cpstd {
 
-// Segment Tree
+// @brief Segment Tree
 
 template <
 	typename S,
@@ -71,14 +71,14 @@ class Segtree {
 	}
 
 	// A[pos] を返す
-	// O(logN) time
+	// O(1) time
 	const S& get(int pos) const {
 		assert(0 <= pos && pos < N);
 		return dat[pos + sz];
 	}
 
 	// A[pos] を返す (assert なし)
-	// O(logN) time
+	// O(1) time
 	const S& operator[](int pos) const noexcept { return dat[pos + sz]; }
 
 	// op[l, r) を返す
