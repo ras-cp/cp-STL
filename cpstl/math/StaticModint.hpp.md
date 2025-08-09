@@ -3,9 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: cpstl/ds/Segtree.hpp
+    title: Segment Tree
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Template.hpp
     title: cpstl/other/Template.hpp
   _extendedVerifiedWith:
@@ -130,6 +133,7 @@ data:
   requiredBy:
   - cpstl/other/Fastio.hpp
   - cpstl/other/Template.hpp
+  - cpstl/ds/Segtree.hpp
   timestamp: '2025-07-30 22:35:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

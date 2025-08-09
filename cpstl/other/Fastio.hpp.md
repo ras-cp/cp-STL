@@ -5,7 +5,10 @@ data:
     path: cpstl/math/StaticModint.hpp
     title: Static Modint
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
+    path: cpstl/ds/Segtree.hpp
+    title: Segment Tree
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Template.hpp
     title: cpstl/other/Template.hpp
   _extendedVerifiedWith:
@@ -245,6 +248,7 @@ data:
   path: cpstl/other/Fastio.hpp
   requiredBy:
   - cpstl/other/Template.hpp
+  - cpstl/ds/Segtree.hpp
   timestamp: '2025-07-30 23:15:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -7,11 +7,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: cpstl/ds/Segtree.hpp
+    title: Segment Tree
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+    title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/yuki-0875-Segtree.test.cpp
+    title: verify/ds/yuki-0875-Segtree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"cpstl/other/Template.hpp\"\n\n#include <immintrin.h>\n#include\
@@ -263,10 +272,13 @@ data:
   - cpstl/other/Fastio.hpp
   isVerificationFile: false
   path: cpstl/other/Template.hpp
-  requiredBy: []
+  requiredBy:
+  - cpstl/ds/Segtree.hpp
   timestamp: '2025-08-10 02:41:35+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  - verify/ds/yuki-0875-Segtree.test.cpp
 documentation_of: cpstl/other/Template.hpp
 layout: document
 redirect_from:
