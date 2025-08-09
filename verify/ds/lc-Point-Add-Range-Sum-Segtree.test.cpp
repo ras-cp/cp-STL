@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 
-#include <bits/stdc++.h>
-#include "cpstl/other/Fastio.hpp"
+#include "cpstl/other/Template.hpp"
 #include "cpstl/ds/Segtree.hpp"
 
 long long op(long long a, long long b) { return a + b; }
