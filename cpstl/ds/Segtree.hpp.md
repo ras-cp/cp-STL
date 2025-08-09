@@ -125,8 +125,8 @@ data:
   timestamp: '2025-07-29 00:18:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/ds/yuki-0875-Segtree.test.cpp
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  - verify/ds/yuki-0875-Segtree.test.cpp
 documentation_of: cpstl/ds/Segtree.hpp
 layout: document
 title: Segment Tree

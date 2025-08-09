@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
+  - icon: ':warning:'
+    path: cpstl/other/Template.hpp
+    title: cpstl/other/Template.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
@@ -126,15 +129,16 @@ data:
   path: cpstl/math/StaticModint.hpp
   requiredBy:
   - cpstl/other/Fastio.hpp
+  - cpstl/other/Template.hpp
   timestamp: '2025-07-30 22:35:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/ds/yuki-0875-Segtree.test.cpp
-  - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-  - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-  - verify/ds/lc-Union-Find-Dsu.test.cpp
-  - verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
   - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
+  - verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+  - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
+  - verify/ds/lc-Union-Find-Dsu.test.cpp
+  - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
+  - verify/ds/yuki-0875-Segtree.test.cpp
 documentation_of: cpstl/math/StaticModint.hpp
 layout: document
 title: Static Modint

@@ -25,6 +25,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/other/Fastio.hpp
       title: Fast I/O
+    - icon: ':warning:'
+      path: cpstl/other/Template.hpp
+      title: cpstl/other/Template.hpp
   verificationCategories:
   - name: verify/ds
     pages:
