@@ -1,11 +1,11 @@
 #pragma once
 
-#include <vector>
-#include <bit>
+#include "cpstl/other/Template.hpp"
 
 namespace cpstd {
 
-// Dual Segment Tree
+// @brief Dual Segment Tree
+// @see
 
 template <
 	typename F,
@@ -34,7 +34,7 @@ class DualSegtree {
 		lazy.assign(sz << 1, id());
 	}
 
-	// A[pos] への作用素を f にする
+	// [pos] への作用素を f にする
 	// O(logN) time
 	void set(int pos, const F &f) {
 		assert(0 <= pos && pos < N);
@@ -43,7 +43,7 @@ class DualSegtree {
 		lazy[pos] = f;
 	}
 
-	// A[pos] に f を作用させる
+	// [pos] に f を作用させる
 	// O(logN) time
 	void apply(int pos, const F &f) {
 		assert(0 <= pos && pos < N);
@@ -52,7 +52,7 @@ class DualSegtree {
 		lazy[pos] = composition(f, lazy[pos]);
 	}
 
-	// A[l, r) に f を作用させる
+	// [l, r) に f を作用させる
 	// O(logN) time
 	void apply(int l, int r, const F &f) {
 		assert(0 <= l && l <= r && r <= N);
@@ -65,7 +65,7 @@ class DualSegtree {
 		}
 	}
 
-	// A[pos] の作用素を返す
+	// [pos] の作用素を返す
 	// O(logN) time
 	F get(int pos) {
 		assert(0 <= pos && pos < N);
@@ -74,7 +74,7 @@ class DualSegtree {
 		return lazy[pos];
 	}
 
-	// A[pos] の作用素を返す
+	// [pos] の作用素を返す
 	// O(logN) time
 	F operator[](int pos) noexcept {
 		pos += sz;
