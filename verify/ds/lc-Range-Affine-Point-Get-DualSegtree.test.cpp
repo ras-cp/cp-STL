@@ -1,8 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_affine_point_get"
 
-#include <bits/stdc++.h>
-#include "cpstl/math/StaticModint.hpp"
-#include "cpstl/other/Fastio.hpp"
+#include "cpstl/other/Template.hpp"
 #include "cpstl/ds/DualSegtree.hpp"
 
 using mint = cpstd::Modint998244353;
