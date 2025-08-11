@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: cpstl/ds/Segtree.hpp
     title: Segment Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/math/StaticModint.hpp
     title: Static Modint
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Template.hpp
     title: cpstl/other/Template.hpp
   _extendedRequiredBy: []

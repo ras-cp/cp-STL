@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/ds/DualSegtree.hpp
     title: Dual Segment Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/math/StaticModint.hpp
     title: Static Modint
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: cpstl/other/Template.hpp
     title: cpstl/other/Template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_point_get
@@ -25,24 +25,77 @@ data:
     - https://judge.yosupo.jp/problem/range_affine_point_get
   bundledCode: "#line 1 \"verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\n\
-    \n#include <bits/stdc++.h>\n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n#line 2\
-    \ \"cpstl/other/Template.hpp\"\n\n#include <immintrin.h>\n#line 6 \"cpstl/other/Template.hpp\"\
-    \n#include <bit>\n#line 11 \"cpstl/other/Template.hpp\"\n#include <charconv>\n\
-    #line 26 \"cpstl/other/Template.hpp\"\n#include <initializer_list>\n#line 47 \"\
-    cpstl/other/Template.hpp\"\n#include <type_traits>\n#line 53 \"cpstl/other/Template.hpp\"\
-    \n\n#line 2 \"cpstl/other/Fastio.hpp\"\n\n#line 4 \"cpstl/other/Fastio.hpp\"\n\
-    \nnamespace cpstd {\n\n// @brief Fast I/O\n// @see https://judge.yosupo.jp/submission/21623\n\
-    // @see https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\n\
-    static constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
-    \ out[100];\nuint32_t pil = 0, pir = 0, por = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\
-    \n\tconstexpr Pre() : num() {\n\t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint\
-    \ n = i;\n\t\t\tfor (int j = 3; j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\
-    \t\t\t\tn /= 10;\n\t\t\t}\n\t\t}\n\t}\n} constexpr pre;\n\ninline void load()\
-    \ {\n\tstd::memcpy(ibuf, ibuf + pil, pir - pil);\n\tpir = pir - pil + std::fread(ibuf\
-    \ + pir - pil, 1, BUF_SIZE - pir + pil, stdin);\n\tpil = 0;\n\tif (pir < BUF_SIZE)\
-    \ ibuf[pir++] = '\\n';\n}\n\ninline void flush() {\n\tfwrite(obuf, 1, por, stdout);\n\
-    \tpor = 0;\n}\n\nvoid _input(char &dest) {\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\
-    \t\tdest = ibuf[pil++];\n\t} while (std::isspace(dest));\n}\n\nvoid _input(std::string\
+    \n#line 2 \"cpstl/other/Template.hpp\"\n\n#include <immintrin.h>\n#include <algorithm>\n\
+    #include <array>\n#include <bit>\n#include <bitset>\n#include <cassert>\n#include\
+    \ <cctype>\n#include <cfenv>\n#include <charconv>\n#include <chrono>\n#include\
+    \ <cinttypes>\n#include <climits>\n#include <cmath>\n#include <complex>\n#include\
+    \ <cstdarg>\n#include <cstddef>\n#include <cstdint>\n#include <cstdio>\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <deque>\n#include <fstream>\n#include\
+    \ <functional>\n#include <initializer_list>\n#include <iomanip>\n#include <ios>\n\
+    #include <iostream>\n#include <istream>\n#include <iterator>\n#include <limits>\n\
+    #include <list>\n#include <map>\n#include <memory>\n#include <new>\n#include <numeric>\n\
+    #include <ostream>\n#include <queue>\n#include <random>\n#include <set>\n#include\
+    \ <sstream>\n#include <stack>\n#include <streambuf>\n#include <string>\n#include\
+    \ <tuple>\n#include <type_traits>\n#include <typeinfo>\n#include <unordered_map>\n\
+    #include <unordered_set>\n#include <utility>\n#include <vector>\n\n#line 2 \"\
+    cpstl/math/StaticModint.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\n\nnamespace\
+    \ cpstd {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
+    \ntemplate <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
+    \tuint32_t _v = 0;\n\n\tstatic constexpr bool is_prime = []() -> bool {\n\t\t\
+    if (m == 1) return false;\n\t\tif (m == 2 || m == 7 || m == 61) return true;\n\
+    \t\tif (!(m & 1)) return false;\n\t\tuint32_t d = m - 1;\n\t\twhile (!(d & 1))\
+    \ d >>= 1;\n\t\tfor (uint32_t a : {2, 7, 61}) {\n\t\t\tuint32_t t = d;\n\t\t\t\
+    mint y = mint(a).pow(t);\n\t\t\twhile (t != m - 1 && y != 1 && y != m - 1) {\n\
+    \t\t\t\ty *= y;\n\t\t\t\tt <<= 1;\n\t\t\t}\n\t\t\tif (y != m - 1 && !(t & 1))\
+    \ return false;\n\t\t}\n\t\treturn true;\n\t}();\n\t\n\tstatic constexpr std::pair<int32_t,\
+    \ int32_t> inv_gcd(int32_t a, int32_t b) {\n\t\tif (a == 0) return {b, 0};\n\t\
+    \tint32_t s = b, t = a, m0 = 0, m1 = 1;\n\t\twhile (t) {\n\t\t\tconst int32_t\
+    \ q = s / t;\n\t\t\ts -= t * q, std::swap(s, t);\n\t\t\tm0 -= m1 * q, std::swap(m0,\
+    \ m1);\n\t\t}\n\t\tif (m0 < 0) m0 += b / s;\n\t\treturn {s, m0};\n\t}\n\n\tpublic:\n\
+    \tconstexpr StaticModint() {}\n\ttemplate <typename T>\n\tconstexpr StaticModint(T\
+    \ v) {\n\t\tstatic_assert(std::is_integral_v<T>, \"T is not integral type.\");\n\
+    \t\tif constexpr (std::is_signed_v<T>) {\n\t\t\tint64_t x = int64_t(v % int64_t(m));\n\
+    \t\t\tif (x < 0) x += m;\n\t\t\t_v = uint32_t(x);\n\t\t}\n\t\telse _v = uint32_t(v\
+    \ % m);\n\t}\n\n\tstatic constexpr mint raw(uint32_t v) { mint a; a._v = v; return\
+    \ a; }\n\n\tstatic constexpr uint32_t mod() { return m; }\n\n\tconstexpr uint32_t\
+    \ val() const { return _v; }\n\n\tconstexpr mint& operator++() { return *this\
+    \ += 1; }\n\n\tconstexpr mint operator++(int) { mint res = *this; ++*this; return\
+    \ res; }\n\n\tconstexpr mint& operator--() { return *this -= 1; }\n\n\tconstexpr\
+    \ mint operator--(int) { mint res = *this; --*this; return res; }\n\n\tconstexpr\
+    \ mint& operator+=(mint rhs) {\n\t\tif (_v >= m - rhs._v) _v -= m;\n\t\t_v +=\
+    \ rhs._v;\n\t\treturn *this;\n\t}\n\n\tconstexpr mint& operator-=(mint rhs) {\n\
+    \t\tif (_v < rhs._v) _v += m;\n\t\t_v -= rhs._v;\n\t\treturn *this;\n\t}\n\n\t\
+    constexpr mint& operator*=(mint rhs) { return *this = *this * rhs; }\n\n\tconstexpr\
+    \ mint& operator/=(mint rhs) { return *this *= rhs.inv(); }\n\n\tconstexpr mint\
+    \ operator+() const { return *this; }\n\n\tconstexpr mint operator-() const {\
+    \ return mint{} - *this; }\n\n\tconstexpr mint pow(long long n) const {\n\t\t\
+    assert(0 <= n);\n\t\tif (n == 0) return 1;\n\t\tmint x = *this, r = 1;\n\t\twhile\
+    \ (n > 0) {\n\t\t\tif (n & 1) r *= x;\n\t\t\tx *= x;\n\t\t\tn >>= 1;\n\t\t\tif\
+    \ (!n) return r;\n\t\t}\n\t\treturn r;\n\t}\n\n\tconstexpr mint inv() const {\n\
+    \t\tif constexpr (is_prime) {\n\t\t\tassert(_v);\n\t\t\treturn pow(m - 2);\n\t\
+    \t}\n\t\telse {\n\t\t\tauto eg = inv_gcd(_v, m);\n\t\t\tassert(eg.first == 1);\n\
+    \t\t\treturn eg.second;\n\t\t}\n\t}\n\n\tfriend constexpr mint operator+(mint\
+    \ lhs, mint rhs) { return lhs += rhs; }\n\n\tfriend constexpr mint operator-(mint\
+    \ lhs, mint rhs) { return lhs -= rhs; }\n\n\tfriend constexpr mint operator*(mint\
+    \ lhs, mint rhs) { return uint64_t(lhs._v) * rhs._v; }\n\t\n\tfriend constexpr\
+    \ mint operator/(mint lhs, mint rhs) { return lhs /= rhs; }\n\n\tfriend constexpr\
+    \ bool operator==(mint lhs, mint rhs) { return lhs._v == rhs._v; }\n\n\tfriend\
+    \ constexpr bool operator!=(mint lhs, mint rhs) { return lhs._v != rhs._v; }\n\
+    };\n\nusing Modint998244353 = StaticModint<998244353>;\n\nconstexpr Modint998244353\
+    \ operator\"\"_M(unsigned long long x) { return x; }\n};\n#line 2 \"cpstl/other/Fastio.hpp\"\
+    \n\n#line 4 \"cpstl/other/Fastio.hpp\"\n\nnamespace cpstd {\n\n// @brief Fast\
+    \ I/O\n// @see https://judge.yosupo.jp/submission/21623\n// @see https://maspypy.com/library-checker-many-a-b\n\
+    \nnamespace Fastio {\n\nstatic constexpr const uint32_t BUF_SIZE = 1 << 17;\n\
+    char ibuf[BUF_SIZE], obuf[BUF_SIZE], out[100];\nuint32_t pil = 0, pir = 0, por\
+    \ = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\n\tconstexpr Pre() : num() {\n\
+    \t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint n = i;\n\t\t\tfor (int j = 3;\
+    \ j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\t\t\t\tn /= 10;\n\t\t\t\
+    }\n\t\t}\n\t}\n} constexpr pre;\n\ninline void load() {\n\tstd::memcpy(ibuf, ibuf\
+    \ + pil, pir - pil);\n\tpir = pir - pil + std::fread(ibuf + pir - pil, 1, BUF_SIZE\
+    \ - pir + pil, stdin);\n\tpil = 0;\n\tif (pir < BUF_SIZE) ibuf[pir++] = '\\n';\n\
+    }\n\ninline void flush() {\n\tfwrite(obuf, 1, por, stdout);\n\tpor = 0;\n}\n\n\
+    void _input(char &dest) {\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\t\tdest =\
+    \ ibuf[pil++];\n\t} while (std::isspace(dest));\n}\n\nvoid _input(std::string\
     \ &dest) {\n\tdest.clear();\n\tchar c;\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\
     \t\tc = ibuf[pil++];\n\t} while (std::isspace(c));\n\tdo {\n\t\tdest += c;\n\t\
     \tif (pil == pir) load();\n\t\tc = ibuf[pil++];\n\t} while (!std::isspace(c));\n\
@@ -106,76 +159,31 @@ data:
     \ T>\nvoid print(H &&tgh, T &&... tgt) {\n\t_print(tgh);\n\tif (sizeof...(tgt))\
     \ _print(' ');\n\tprint(std::forward<T>(tgt)...);\n}\n\nvoid __attribute__((destructor))\
     \ _d() { flush(); }\n\n};\n\nusing Fastio::input;\nusing Fastio::print;\nusing\
-    \ Fastio::flush;\n\n};\n#line 4 \"cpstl/math/StaticModint.hpp\"\n\nnamespace cpstd\
-    \ {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
-    \ntemplate <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
-    \tuint32_t _v = 0;\n\n\tstatic constexpr bool is_prime = []() -> bool {\n\t\t\
-    if (m == 1) return false;\n\t\tif (m == 2 || m == 7 || m == 61) return true;\n\
-    \t\tif (!(m & 1)) return false;\n\t\tuint32_t d = m - 1;\n\t\twhile (!(d & 1))\
-    \ d >>= 1;\n\t\tfor (uint32_t a : {2, 7, 61}) {\n\t\t\tuint32_t t = d;\n\t\t\t\
-    mint y = mint(a).pow(t);\n\t\t\twhile (t != m - 1 && y != 1 && y != m - 1) {\n\
-    \t\t\t\ty *= y;\n\t\t\t\tt <<= 1;\n\t\t\t}\n\t\t\tif (y != m - 1 && !(t & 1))\
-    \ return false;\n\t\t}\n\t\treturn true;\n\t}();\n\t\n\tstatic constexpr std::pair<int32_t,\
-    \ int32_t> inv_gcd(int32_t a, int32_t b) {\n\t\tif (a == 0) return {b, 0};\n\t\
-    \tint32_t s = b, t = a, m0 = 0, m1 = 1;\n\t\twhile (t) {\n\t\t\tconst int32_t\
-    \ q = s / t;\n\t\t\ts -= t * q, std::swap(s, t);\n\t\t\tm0 -= m1 * q, std::swap(m0,\
-    \ m1);\n\t\t}\n\t\tif (m0 < 0) m0 += b / s;\n\t\treturn {s, m0};\n\t}\n\n\tpublic:\n\
-    \tconstexpr StaticModint() {}\n\ttemplate <typename T>\n\tconstexpr StaticModint(T\
-    \ v) {\n\t\tstatic_assert(std::is_integral_v<T>, \"T is not integral type.\");\n\
-    \t\tif constexpr (std::is_signed_v<T>) {\n\t\t\tint64_t x = int64_t(v % int64_t(m));\n\
-    \t\t\tif (x < 0) x += m;\n\t\t\t_v = uint32_t(x);\n\t\t}\n\t\telse _v = uint32_t(v\
-    \ % m);\n\t}\n\n\tstatic constexpr mint raw(uint32_t v) { mint a; a._v = v; return\
-    \ a; }\n\n\tstatic constexpr uint32_t mod() { return m; }\n\n\tconstexpr uint32_t\
-    \ val() const { return _v; }\n\n\tconstexpr mint& operator++() { return *this\
-    \ += 1; }\n\n\tconstexpr mint operator++(int) { mint res = *this; ++*this; return\
-    \ res; }\n\n\tconstexpr mint& operator--() { return *this -= 1; }\n\n\tconstexpr\
-    \ mint operator--(int) { mint res = *this; --*this; return res; }\n\n\tconstexpr\
-    \ mint& operator+=(mint rhs) {\n\t\tif (_v >= m - rhs._v) _v -= m;\n\t\t_v +=\
-    \ rhs._v;\n\t\treturn *this;\n\t}\n\n\tconstexpr mint& operator-=(mint rhs) {\n\
-    \t\tif (_v < rhs._v) _v += m;\n\t\t_v -= rhs._v;\n\t\treturn *this;\n\t}\n\n\t\
-    constexpr mint& operator*=(mint rhs) { return *this = *this * rhs; }\n\n\tconstexpr\
-    \ mint& operator/=(mint rhs) { return *this *= rhs.inv(); }\n\n\tconstexpr mint\
-    \ operator+() const { return *this; }\n\n\tconstexpr mint operator-() const {\
-    \ return mint{} - *this; }\n\n\tconstexpr mint pow(long long n) const {\n\t\t\
-    assert(0 <= n);\n\t\tif (n == 0) return 1;\n\t\tmint x = *this, r = 1;\n\t\twhile\
-    \ (n > 0) {\n\t\t\tif (n & 1) r *= x;\n\t\t\tx *= x;\n\t\t\tn >>= 1;\n\t\t\tif\
-    \ (!n) return r;\n\t\t}\n\t\treturn r;\n\t}\n\n\tconstexpr mint inv() const {\n\
-    \t\tif constexpr (is_prime) {\n\t\t\tassert(_v);\n\t\t\treturn pow(m - 2);\n\t\
-    \t}\n\t\telse {\n\t\t\tauto eg = inv_gcd(_v, m);\n\t\t\tassert(eg.first == 1);\n\
-    \t\t\treturn eg.second;\n\t\t}\n\t}\n\n\tfriend constexpr mint operator+(mint\
-    \ lhs, mint rhs) { return lhs += rhs; }\n\n\tfriend constexpr mint operator-(mint\
-    \ lhs, mint rhs) { return lhs -= rhs; }\n\n\tfriend constexpr mint operator*(mint\
-    \ lhs, mint rhs) { return uint64_t(lhs._v) * rhs._v; }\n\t\n\tfriend constexpr\
-    \ mint operator/(mint lhs, mint rhs) { return lhs /= rhs; }\n\n\tfriend constexpr\
-    \ bool operator==(mint lhs, mint rhs) { return lhs._v == rhs._v; }\n\n\tfriend\
-    \ constexpr bool operator!=(mint lhs, mint rhs) { return lhs._v != rhs._v; }\n\
-    };\n\nusing Modint998244353 = StaticModint<998244353>;\n\nconstexpr Modint998244353\
-    \ operator\"\"_M(unsigned long long x) { return x; }\n};\n#line 2 \"cpstl/ds/DualSegtree.hpp\"\
-    \n\n#line 5 \"cpstl/ds/DualSegtree.hpp\"\n\nnamespace cpstd {\n\n// Dual Segment\
-    \ Tree\n\ntemplate <\n\ttypename F,\n\tauto composition,\n\tauto id\n>\nclass\
-    \ DualSegtree {\n\tprivate:\n\tstd::vector<F> lazy;\n\tint N, sz, log;\n\n\tvoid\
-    \ pushdown(int pos) {\n\t\tfor (int i = log; i >= 1; --i) {\n\t\t\tint p = pos\
-    \ >> i;\n\t\t\tlazy[p << 1] = composition(lazy[p], lazy[p << 1]);\n\t\t\tlazy[p\
-    \ << 1 | 1] = composition(lazy[p], lazy[p << 1 | 1]);\n\t\t\tlazy[p] = id();\n\
-    \t\t}\n\t}\n\n\tpublic:\n\tDualSegtree() {}\n\texplicit DualSegtree(int n) : N(n)\
-    \ {\n\t\tsz = std::bit_ceil((unsigned int)(N));\n\t\tlog = std::bit_width((unsigned\
-    \ int)(sz)) - 1;\n\t\tlazy.assign(sz << 1, id());\n\t}\n\n\t// A[pos] \u3078\u306E\
-    \u4F5C\u7528\u7D20\u3092 f \u306B\u3059\u308B\n\t// O(logN) time\n\tvoid set(int\
+    \ Fastio::flush;\n\n};\n#line 2 \"cpstl/ds/DualSegtree.hpp\"\n\n#line 5 \"cpstl/ds/DualSegtree.hpp\"\
+    \n\nnamespace cpstd {\n\n// Dual Segment Tree\n\ntemplate <\n\ttypename F,\n\t\
+    auto composition,\n\tauto id\n>\nclass DualSegtree {\n\tprivate:\n\tstd::vector<F>\
+    \ lazy;\n\tint N, sz, log;\n\n\tvoid pushdown(int pos) {\n\t\tfor (int i = log;\
+    \ i >= 1; --i) {\n\t\t\tint p = pos >> i;\n\t\t\tlazy[p << 1] = composition(lazy[p],\
+    \ lazy[p << 1]);\n\t\t\tlazy[p << 1 | 1] = composition(lazy[p], lazy[p << 1 |\
+    \ 1]);\n\t\t\tlazy[p] = id();\n\t\t}\n\t}\n\n\tpublic:\n\tDualSegtree() {}\n\t\
+    explicit DualSegtree(int n) : N(n) {\n\t\tsz = std::bit_ceil((unsigned int)(N));\n\
+    \t\tlog = std::bit_width((unsigned int)(sz)) - 1;\n\t\tlazy.assign(sz << 1, id());\n\
+    \t}\n\n\t// A[pos] \u3078\u306E\u4F5C\u7528\u7D20\u3092 f \u306B\u3059\u308B\n\
+    \t// O(logN) time\n\tvoid set(int pos, const F &f) {\n\t\tassert(0 <= pos && pos\
+    \ < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\tlazy[pos] = f;\n\t}\n\n\t// A[pos]\
+    \ \u306B f \u3092\u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN) time\n\tvoid apply(int\
     \ pos, const F &f) {\n\t\tassert(0 <= pos && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\
-    \t\tlazy[pos] = f;\n\t}\n\n\t// A[pos] \u306B f \u3092\u4F5C\u7528\u3055\u305B\
-    \u308B\n\t// O(logN) time\n\tvoid apply(int pos, const F &f) {\n\t\tassert(0 <=\
-    \ pos && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\tlazy[pos] = composition(f,\
-    \ lazy[pos]);\n\t}\n\n\t// A[l, r) \u306B f \u3092\u4F5C\u7528\u3055\u305B\u308B\
-    \n\t// O(logN) time\n\tvoid apply(int l, int r, const F &f) {\n\t\tassert(0 <=\
-    \ l && l <= r && r <= N);\n\t\tif (l == r) return;\n\t\tl += sz, r += sz;\n\t\t\
-    pushdown(l), pushdown(r - 1);\n\t\tfor (; l < r; l >>= 1, r >>= 1) {\n\t\t\tif\
-    \ (l & 1) lazy[l] = composition(f, lazy[l]), ++l;\n\t\t\tif (r & 1) --r, lazy[r]\
-    \ = composition(f, lazy[r]);\n\t\t}\n\t}\n\n\t// A[pos] \u306E\u4F5C\u7528\u7D20\
-    \u3092\u8FD4\u3059\n\t// O(logN) time\n\tF get(int pos) {\n\t\tassert(0 <= pos\
-    \ && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\treturn lazy[pos];\n\t\
-    }\n\n\t// A[pos] \u306E\u4F5C\u7528\u7D20\u3092\u8FD4\u3059\n\t// O(logN) time\n\
-    \tF operator[](int pos) noexcept {\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\treturn\
-    \ lazy[pos];\n\t}\n};\n};\n#line 7 \"verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp\"\
+    \t\tlazy[pos] = composition(f, lazy[pos]);\n\t}\n\n\t// A[l, r) \u306B f \u3092\
+    \u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN) time\n\tvoid apply(int l, int r,\
+    \ const F &f) {\n\t\tassert(0 <= l && l <= r && r <= N);\n\t\tif (l == r) return;\n\
+    \t\tl += sz, r += sz;\n\t\tpushdown(l), pushdown(r - 1);\n\t\tfor (; l < r; l\
+    \ >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lazy[l] = composition(f, lazy[l]), ++l;\n\
+    \t\t\tif (r & 1) --r, lazy[r] = composition(f, lazy[r]);\n\t\t}\n\t}\n\n\t// A[pos]\
+    \ \u306E\u4F5C\u7528\u7D20\u3092\u8FD4\u3059\n\t// O(logN) time\n\tF get(int pos)\
+    \ {\n\t\tassert(0 <= pos && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\t\
+    return lazy[pos];\n\t}\n\n\t// A[pos] \u306E\u4F5C\u7528\u7D20\u3092\u8FD4\u3059\
+    \n\t// O(logN) time\n\tF operator[](int pos) noexcept {\n\t\tpos += sz;\n\t\t\
+    pushdown(pos);\n\t\treturn lazy[pos];\n\t}\n};\n};\n#line 5 \"verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp\"\
     \n\nusing mint = cpstd::Modint998244353;\nusing F = std::pair<mint, mint>;\nF\
     \ composition(F g, F f) { return {f.first * g.first, f.second * g.first + g.second};\
     \ }\nF id() { return {1, 0}; }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N,\
@@ -186,26 +194,26 @@ data:
     \ = sg[p];\n\t\t\tcpstd::print(act.first * A[p] + act.second);\n\t\t}\n\t}\n\t\
     return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\
-    \n\n#include <bits/stdc++.h>\n#include \"cpstl/math/StaticModint.hpp\"\n#include\
-    \ \"cpstl/other/Fastio.hpp\"\n#include \"cpstl/ds/DualSegtree.hpp\"\n\nusing mint\
-    \ = cpstd::Modint998244353;\nusing F = std::pair<mint, mint>;\nF composition(F\
-    \ g, F f) { return {f.first * g.first, f.second * g.first + g.second}; }\nF id()\
-    \ { return {1, 0}; }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tstd::vector<mint>\
-    \ A(N);\n\tcpstd::input(A);\n\tcpstd::DualSegtree<F, composition, id> sg(N);\n\
-    \tint t, l, r, p;\n\tmint b, c;\n\twhile (Q--) {\n\t\tcpstd::input(t);\n\t\tif\
-    \ (t == 0) {\n\t\t\tcpstd::input(l, r, b, c);\n\t\t\tsg.apply(l, r, {b, c});\n\
-    \t\t}\n\t\telse {\n\t\t\tcpstd::input(p);\n\t\t\tF act = sg[p];\n\t\t\tcpstd::print(act.first\
-    \ * A[p] + act.second);\n\t\t}\n\t}\n\treturn 0;\n}\n"
+    \n\n#include \"cpstl/other/Template.hpp\"\n#include \"cpstl/ds/DualSegtree.hpp\"\
+    \n\nusing mint = cpstd::Modint998244353;\nusing F = std::pair<mint, mint>;\nF\
+    \ composition(F g, F f) { return {f.first * g.first, f.second * g.first + g.second};\
+    \ }\nF id() { return {1, 0}; }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N,\
+    \ Q);\n\tstd::vector<mint> A(N);\n\tcpstd::input(A);\n\tcpstd::DualSegtree<F,\
+    \ composition, id> sg(N);\n\tint t, l, r, p;\n\tmint b, c;\n\twhile (Q--) {\n\t\
+    \tcpstd::input(t);\n\t\tif (t == 0) {\n\t\t\tcpstd::input(l, r, b, c);\n\t\t\t\
+    sg.apply(l, r, {b, c});\n\t\t}\n\t\telse {\n\t\t\tcpstd::input(p);\n\t\t\tF act\
+    \ = sg[p];\n\t\t\tcpstd::print(act.first * A[p] + act.second);\n\t\t}\n\t}\n\t\
+    return 0;\n}\n"
   dependsOn:
-  - cpstl/math/StaticModint.hpp
   - cpstl/other/Template.hpp
+  - cpstl/math/StaticModint.hpp
   - cpstl/other/Fastio.hpp
   - cpstl/ds/DualSegtree.hpp
   isVerificationFile: true
   path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   requiredBy: []
-  timestamp: '2025-08-12 03:21:22+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-08-12 03:29:34+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
 layout: document
