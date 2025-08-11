@@ -49,27 +49,25 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
+    document_title: Fast I/O
     links:
     - https://judge.yosupo.jp/submission/21623
     - https://maspypy.com/library-checker-many-a-b
-  bundledCode: "#line 2 \"cpstl/other/Fastio.hpp\"\n\n#include <cstdint>\n#include\
-    \ <cstdio>\n#include <cstddef>\n#include <string>\n#include <type_traits>\n#include\
-    \ <utility>\n#include <tuple>\n#include <array>\n#include <vector>\n#include <any>\n\
-    #include <ios>\n#include <iomanip>\n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n\
-    #line 2 \"cpstl/other/Template.hpp\"\n\n#include <immintrin.h>\n#include <algorithm>\n\
-    #line 6 \"cpstl/other/Template.hpp\"\n#include <bit>\n#include <bitset>\n#include\
-    \ <cassert>\n#include <cctype>\n#include <cfenv>\n#include <charconv>\n#include\
-    \ <chrono>\n#include <cinttypes>\n#include <climits>\n#include <cmath>\n#include\
-    \ <complex>\n#include <cstdarg>\n#line 21 \"cpstl/other/Template.hpp\"\n#include\
-    \ <cstdlib>\n#include <cstring>\n#include <deque>\n#include <fstream>\n#include\
-    \ <functional>\n#include <initializer_list>\n#line 29 \"cpstl/other/Template.hpp\"\
-    \n#include <iostream>\n#include <istream>\n#include <iterator>\n#include <limits>\n\
-    #include <list>\n#include <map>\n#include <memory>\n#include <new>\n#include <numeric>\n\
-    #include <ostream>\n#include <queue>\n#include <random>\n#include <set>\n#include\
-    \ <sstream>\n#include <stack>\n#include <streambuf>\n#line 48 \"cpstl/other/Template.hpp\"\
-    \n#include <typeinfo>\n#include <unordered_map>\n#include <unordered_set>\n#line\
-    \ 53 \"cpstl/other/Template.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\n\
-    \nnamespace cpstd {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
+  bundledCode: "#line 2 \"cpstl/other/Fastio.hpp\"\n\n#line 2 \"cpstl/other/Template.hpp\"\
+    \n\n#include <immintrin.h>\n#include <algorithm>\n#include <array>\n#include <bit>\n\
+    #include <bitset>\n#include <cassert>\n#include <cctype>\n#include <cfenv>\n#include\
+    \ <charconv>\n#include <chrono>\n#include <cinttypes>\n#include <climits>\n#include\
+    \ <cmath>\n#include <complex>\n#include <cstdarg>\n#include <cstddef>\n#include\
+    \ <cstdint>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
+    \ <deque>\n#include <fstream>\n#include <functional>\n#include <initializer_list>\n\
+    #include <iomanip>\n#include <ios>\n#include <iostream>\n#include <istream>\n\
+    #include <iterator>\n#include <limits>\n#include <list>\n#include <map>\n#include\
+    \ <memory>\n#include <new>\n#include <numeric>\n#include <ostream>\n#include <queue>\n\
+    #include <random>\n#include <set>\n#include <sstream>\n#include <stack>\n#include\
+    \ <streambuf>\n#include <string>\n#include <tuple>\n#include <type_traits>\n#include\
+    \ <typeinfo>\n#include <unordered_map>\n#include <unordered_set>\n#include <utility>\n\
+    #include <vector>\n\n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\
+    \n\nnamespace cpstd {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
     \ntemplate <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
     \tuint32_t _v = 0;\n\n\tstatic constexpr bool is_prime = []() -> bool {\n\t\t\
     if (m == 1) return false;\n\t\tif (m == 2 || m == 7 || m == 61) return true;\n\
@@ -112,10 +110,10 @@ data:
     \ bool operator==(mint lhs, mint rhs) { return lhs._v == rhs._v; }\n\n\tfriend\
     \ constexpr bool operator!=(mint lhs, mint rhs) { return lhs._v != rhs._v; }\n\
     };\n\nusing Modint998244353 = StaticModint<998244353>;\n\nconstexpr Modint998244353\
-    \ operator\"\"_M(unsigned long long x) { return x; }\n};\n#line 16 \"cpstl/other/Fastio.hpp\"\
-    \n\nnamespace cpstd {\n\n// Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n\
-    // https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\nstatic\
-    \ constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
+    \ operator\"\"_M(unsigned long long x) { return x; }\n};\n#line 4 \"cpstl/other/Fastio.hpp\"\
+    \n\nnamespace cpstd {\n\n// @brief Fast I/O\n// @see https://judge.yosupo.jp/submission/21623\n\
+    // @see https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\n\
+    static constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
     \ out[100];\nuint32_t pil = 0, pir = 0, por = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\
     \n\tconstexpr Pre() : num() {\n\t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint\
     \ n = i;\n\t\t\tfor (int j = 3; j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\
@@ -189,22 +187,19 @@ data:
     \ _print(' ');\n\tprint(std::forward<T>(tgt)...);\n}\n\nvoid __attribute__((destructor))\
     \ _d() { flush(); }\n\n};\n\nusing Fastio::input;\nusing Fastio::print;\nusing\
     \ Fastio::flush;\n\n};\n"
-  code: "#pragma once\n\n#include <cstdint>\n#include <cstdio>\n#include <cstddef>\n\
-    #include <string>\n#include <type_traits>\n#include <utility>\n#include <tuple>\n\
-    #include <array>\n#include <vector>\n#include <any>\n#include <ios>\n#include\
-    \ <iomanip>\n#include \"cpstl/math/StaticModint.hpp\"\n\nnamespace cpstd {\n\n\
-    // Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n// https://maspypy.com/library-checker-many-a-b\n\
-    \nnamespace Fastio {\n\nstatic constexpr const uint32_t BUF_SIZE = 1 << 17;\n\
-    char ibuf[BUF_SIZE], obuf[BUF_SIZE], out[100];\nuint32_t pil = 0, pir = 0, por\
-    \ = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\n\tconstexpr Pre() : num() {\n\
-    \t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint n = i;\n\t\t\tfor (int j = 3;\
-    \ j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\t\t\t\tn /= 10;\n\t\t\t\
-    }\n\t\t}\n\t}\n} constexpr pre;\n\ninline void load() {\n\tstd::memcpy(ibuf, ibuf\
-    \ + pil, pir - pil);\n\tpir = pir - pil + std::fread(ibuf + pir - pil, 1, BUF_SIZE\
-    \ - pir + pil, stdin);\n\tpil = 0;\n\tif (pir < BUF_SIZE) ibuf[pir++] = '\\n';\n\
-    }\n\ninline void flush() {\n\tfwrite(obuf, 1, por, stdout);\n\tpor = 0;\n}\n\n\
-    void _input(char &dest) {\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\t\tdest =\
-    \ ibuf[pil++];\n\t} while (std::isspace(dest));\n}\n\nvoid _input(std::string\
+  code: "#pragma once\n\n#include \"cpstl/other/Template.hpp\"\n\nnamespace cpstd\
+    \ {\n\n// @brief Fast I/O\n// @see https://judge.yosupo.jp/submission/21623\n\
+    // @see https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\n\
+    static constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
+    \ out[100];\nuint32_t pil = 0, pir = 0, por = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\
+    \n\tconstexpr Pre() : num() {\n\t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint\
+    \ n = i;\n\t\t\tfor (int j = 3; j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\
+    \t\t\t\tn /= 10;\n\t\t\t}\n\t\t}\n\t}\n} constexpr pre;\n\ninline void load()\
+    \ {\n\tstd::memcpy(ibuf, ibuf + pil, pir - pil);\n\tpir = pir - pil + std::fread(ibuf\
+    \ + pir - pil, 1, BUF_SIZE - pir + pil, stdin);\n\tpil = 0;\n\tif (pir < BUF_SIZE)\
+    \ ibuf[pir++] = '\\n';\n}\n\ninline void flush() {\n\tfwrite(obuf, 1, por, stdout);\n\
+    \tpor = 0;\n}\n\nvoid _input(char &dest) {\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\
+    \t\tdest = ibuf[pil++];\n\t} while (std::isspace(dest));\n}\n\nvoid _input(std::string\
     \ &dest) {\n\tdest.clear();\n\tchar c;\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\
     \t\tc = ibuf[pil++];\n\t} while (std::isspace(c));\n\tdo {\n\t\tdest += c;\n\t\
     \tif (pil == pir) load();\n\t\tc = ibuf[pil++];\n\t} while (!std::isspace(c));\n\
@@ -270,8 +265,8 @@ data:
     \ _d() { flush(); }\n\n};\n\nusing Fastio::input;\nusing Fastio::print;\nusing\
     \ Fastio::flush;\n\n};\n"
   dependsOn:
-  - cpstl/math/StaticModint.hpp
   - cpstl/other/Template.hpp
+  - cpstl/math/StaticModint.hpp
   isVerificationFile: false
   path: cpstl/other/Fastio.hpp
   requiredBy:
@@ -280,7 +275,7 @@ data:
   - cpstl/ds/WaveletMatrix.hpp
   - cpstl/ds/BitVector.hpp
   - cpstl/ds/Segtree.hpp
-  timestamp: '2025-08-12 03:11:51+09:00'
+  timestamp: '2025-08-12 03:21:22+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp

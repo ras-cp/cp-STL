@@ -82,19 +82,19 @@ data:
     \ constexpr bool operator!=(mint lhs, mint rhs) { return lhs._v != rhs._v; }\n\
     };\n\nusing Modint998244353 = StaticModint<998244353>;\n\nconstexpr Modint998244353\
     \ operator\"\"_M(unsigned long long x) { return x; }\n};\n#line 2 \"cpstl/other/Fastio.hpp\"\
-    \n\n#line 12 \"cpstl/other/Fastio.hpp\"\n#include <any>\n#line 16 \"cpstl/other/Fastio.hpp\"\
-    \n\nnamespace cpstd {\n\n// Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n\
-    // https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\nstatic\
-    \ constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
-    \ out[100];\nuint32_t pil = 0, pir = 0, por = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\
-    \n\tconstexpr Pre() : num() {\n\t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint\
-    \ n = i;\n\t\t\tfor (int j = 3; j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\
-    \t\t\t\tn /= 10;\n\t\t\t}\n\t\t}\n\t}\n} constexpr pre;\n\ninline void load()\
-    \ {\n\tstd::memcpy(ibuf, ibuf + pil, pir - pil);\n\tpir = pir - pil + std::fread(ibuf\
-    \ + pir - pil, 1, BUF_SIZE - pir + pil, stdin);\n\tpil = 0;\n\tif (pir < BUF_SIZE)\
-    \ ibuf[pir++] = '\\n';\n}\n\ninline void flush() {\n\tfwrite(obuf, 1, por, stdout);\n\
-    \tpor = 0;\n}\n\nvoid _input(char &dest) {\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\
-    \t\tdest = ibuf[pil++];\n\t} while (std::isspace(dest));\n}\n\nvoid _input(std::string\
+    \n\n#line 4 \"cpstl/other/Fastio.hpp\"\n\nnamespace cpstd {\n\n// @brief Fast\
+    \ I/O\n// @see https://judge.yosupo.jp/submission/21623\n// @see https://maspypy.com/library-checker-many-a-b\n\
+    \nnamespace Fastio {\n\nstatic constexpr const uint32_t BUF_SIZE = 1 << 17;\n\
+    char ibuf[BUF_SIZE], obuf[BUF_SIZE], out[100];\nuint32_t pil = 0, pir = 0, por\
+    \ = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\n\tconstexpr Pre() : num() {\n\
+    \t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint n = i;\n\t\t\tfor (int j = 3;\
+    \ j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\t\t\t\tn /= 10;\n\t\t\t\
+    }\n\t\t}\n\t}\n} constexpr pre;\n\ninline void load() {\n\tstd::memcpy(ibuf, ibuf\
+    \ + pil, pir - pil);\n\tpir = pir - pil + std::fread(ibuf + pir - pil, 1, BUF_SIZE\
+    \ - pir + pil, stdin);\n\tpil = 0;\n\tif (pir < BUF_SIZE) ibuf[pir++] = '\\n';\n\
+    }\n\ninline void flush() {\n\tfwrite(obuf, 1, por, stdout);\n\tpor = 0;\n}\n\n\
+    void _input(char &dest) {\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\t\tdest =\
+    \ ibuf[pil++];\n\t} while (std::isspace(dest));\n}\n\nvoid _input(std::string\
     \ &dest) {\n\tdest.clear();\n\tchar c;\n\tdo {\n\t\tif (pil + 1 > pir) load();\n\
     \t\tc = ibuf[pil++];\n\t} while (std::isspace(c));\n\tdo {\n\t\tdest += c;\n\t\
     \tif (pil == pir) load();\n\t\tc = ibuf[pil++];\n\t} while (!std::isspace(c));\n\
@@ -269,7 +269,7 @@ data:
   isVerificationFile: false
   path: cpstl/ds/Segtree.hpp
   requiredBy: []
-  timestamp: '2025-08-12 03:11:51+09:00'
+  timestamp: '2025-08-12 03:21:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp

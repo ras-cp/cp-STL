@@ -25,14 +25,14 @@ data:
     - https://yukicoder.me/problems/no/875
   bundledCode: "#line 1 \"verify/ds/yuki-0875-Segtree.test.cpp\"\n#define PROBLEM\
     \ \"https://yukicoder.me/problems/no/875\"\n#include <bits/stdc++.h>\n#line 2\
-    \ \"cpstl/other/Fastio.hpp\"\n\n#line 7 \"cpstl/other/Fastio.hpp\"\n#include <type_traits>\n\
-    #line 12 \"cpstl/other/Fastio.hpp\"\n#include <any>\n#line 2 \"cpstl/math/StaticModint.hpp\"\
-    \n\n#line 2 \"cpstl/other/Template.hpp\"\n\n#include <immintrin.h>\n#line 6 \"\
-    cpstl/other/Template.hpp\"\n#include <bit>\n#line 11 \"cpstl/other/Template.hpp\"\
-    \n#include <charconv>\n#line 26 \"cpstl/other/Template.hpp\"\n#include <initializer_list>\n\
-    #line 53 \"cpstl/other/Template.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\
-    \n\nnamespace cpstd {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
-    \ntemplate <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
+    \ \"cpstl/other/Fastio.hpp\"\n\n#line 2 \"cpstl/other/Template.hpp\"\n\n#include\
+    \ <immintrin.h>\n#line 6 \"cpstl/other/Template.hpp\"\n#include <bit>\n#line 11\
+    \ \"cpstl/other/Template.hpp\"\n#include <charconv>\n#line 26 \"cpstl/other/Template.hpp\"\
+    \n#include <initializer_list>\n#line 47 \"cpstl/other/Template.hpp\"\n#include\
+    \ <type_traits>\n#line 53 \"cpstl/other/Template.hpp\"\n\n#line 2 \"cpstl/math/StaticModint.hpp\"\
+    \n\n#line 4 \"cpstl/math/StaticModint.hpp\"\n\nnamespace cpstd {\n\n// @brief\
+    \ Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\ntemplate\
+    \ <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
     \tuint32_t _v = 0;\n\n\tstatic constexpr bool is_prime = []() -> bool {\n\t\t\
     if (m == 1) return false;\n\t\tif (m == 2 || m == 7 || m == 61) return true;\n\
     \t\tif (!(m & 1)) return false;\n\t\tuint32_t d = m - 1;\n\t\twhile (!(d & 1))\
@@ -74,10 +74,10 @@ data:
     \ bool operator==(mint lhs, mint rhs) { return lhs._v == rhs._v; }\n\n\tfriend\
     \ constexpr bool operator!=(mint lhs, mint rhs) { return lhs._v != rhs._v; }\n\
     };\n\nusing Modint998244353 = StaticModint<998244353>;\n\nconstexpr Modint998244353\
-    \ operator\"\"_M(unsigned long long x) { return x; }\n};\n#line 16 \"cpstl/other/Fastio.hpp\"\
-    \n\nnamespace cpstd {\n\n// Fast I/O\n\n// https://judge.yosupo.jp/submission/21623\n\
-    // https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\nstatic\
-    \ constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
+    \ operator\"\"_M(unsigned long long x) { return x; }\n};\n#line 4 \"cpstl/other/Fastio.hpp\"\
+    \n\nnamespace cpstd {\n\n// @brief Fast I/O\n// @see https://judge.yosupo.jp/submission/21623\n\
+    // @see https://maspypy.com/library-checker-many-a-b\n\nnamespace Fastio {\n\n\
+    static constexpr const uint32_t BUF_SIZE = 1 << 17;\nchar ibuf[BUF_SIZE], obuf[BUF_SIZE],\
     \ out[100];\nuint32_t pil = 0, pir = 0, por = 0;\n\nstruct Pre {\n\tchar num[10000][4];\n\
     \n\tconstexpr Pre() : num() {\n\t\tfor (int i = 0; i < 10000; ++i) {\n\t\t\tint\
     \ n = i;\n\t\t\tfor (int j = 3; j >= 0; --j) {\n\t\t\t\tnum[i][j] = n % 10 | '0';\n\
@@ -224,13 +224,13 @@ data:
     \ 1);\n\t\t}\n\t}\n\treturn 0;\n}\n"
   dependsOn:
   - cpstl/other/Fastio.hpp
-  - cpstl/math/StaticModint.hpp
   - cpstl/other/Template.hpp
+  - cpstl/math/StaticModint.hpp
   - cpstl/ds/Segtree.hpp
   isVerificationFile: true
   path: verify/ds/yuki-0875-Segtree.test.cpp
   requiredBy: []
-  timestamp: '2025-08-12 03:11:51+09:00'
+  timestamp: '2025-08-12 03:21:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ds/yuki-0875-Segtree.test.cpp
