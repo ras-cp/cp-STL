@@ -4,9 +4,12 @@ data:
   - name: cpstl/ds
     pages:
     - icon: ':heavy_check_mark:'
+      path: cpstl/ds/BitVector.hpp
+      title: Succint Bit Vector
+    - icon: ':heavy_check_mark:'
       path: cpstl/ds/Dsu.hpp
       title: Disjoint Set Union
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: cpstl/ds/DualSegtree.hpp
       title: Dual Segment Tree
     - icon: ':heavy_check_mark:'
@@ -15,17 +18,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: cpstl/ds/Segtree.hpp
       title: Segment Tree
+    - icon: ':heavy_check_mark:'
+      path: cpstl/ds/WaveletMatrix.hpp
+      title: Wavelet Matrix
   - name: cpstl/math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: cpstl/math/StaticModint.hpp
       title: Static Modint
   - name: cpstl/other
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: cpstl/other/Fastio.hpp
       title: Fast I/O
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: cpstl/other/Template.hpp
       title: cpstl/other/Template.hpp
   verificationCategories:
@@ -34,12 +40,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
       title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
       title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
       title: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
+      title: verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/ds/lc-Union-Find-Dsu.test.cpp
       title: verify/ds/lc-Union-Find-Dsu.test.cpp

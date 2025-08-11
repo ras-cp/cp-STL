@@ -7,63 +7,37 @@ data:
   - icon: ':question:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
+  - icon: ':question:'
+    path: cpstl/other/Template.hpp
+    title: cpstl/other/Template.hpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: cpstl/ds/BitVector.hpp
-    title: Succint Bit Vector
-  - icon: ':heavy_check_mark:'
-    path: cpstl/ds/Segtree.hpp
-    title: Segment Tree
   - icon: ':heavy_check_mark:'
     path: cpstl/ds/WaveletMatrix.hpp
     title: Wavelet Matrix
-  - icon: ':question:'
-    path: cpstl/math/StaticModint.hpp
-    title: Static Modint
-  - icon: ':question:'
-    path: cpstl/other/Fastio.hpp
-    title: Fast I/O
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-    title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-  - icon: ':x:'
-    path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-    title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
-    title: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
     title: verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/ds/lc-Union-Find-Dsu.test.cpp
-    title: verify/ds/lc-Union-Find-Dsu.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/ds/yuki-0875-Segtree.test.cpp
-    title: verify/ds/yuki-0875-Segtree.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
-    title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    document_title: Succint Bit Vector
     links: []
-  bundledCode: "#line 2 \"cpstl/other/Template.hpp\"\n\n#include <immintrin.h>\n#include\
-    \ <algorithm>\n#include <array>\n#include <bit>\n#include <bitset>\n#include <cassert>\n\
-    #include <cctype>\n#include <cfenv>\n#include <charconv>\n#include <chrono>\n\
-    #include <cinttypes>\n#include <climits>\n#include <cmath>\n#include <complex>\n\
-    #include <cstdarg>\n#include <cstddef>\n#include <cstdint>\n#include <cstdio>\n\
-    #include <cstdlib>\n#include <cstring>\n#include <deque>\n#include <fstream>\n\
-    #include <functional>\n#include <initializer_list>\n#include <iomanip>\n#include\
-    \ <ios>\n#include <iostream>\n#include <istream>\n#include <iterator>\n#include\
-    \ <limits>\n#include <list>\n#include <map>\n#include <memory>\n#include <new>\n\
-    #include <numeric>\n#include <ostream>\n#include <queue>\n#include <random>\n\
-    #include <set>\n#include <sstream>\n#include <stack>\n#include <streambuf>\n#include\
-    \ <string>\n#include <tuple>\n#include <type_traits>\n#include <typeinfo>\n#include\
-    \ <unordered_map>\n#include <unordered_set>\n#include <utility>\n#include <vector>\n\
-    \n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\
+  bundledCode: "#line 2 \"cpstl/ds/BitVector.hpp\"\n\n#line 2 \"cpstl/other/Template.hpp\"\
+    \n\n#include <immintrin.h>\n#include <algorithm>\n#include <array>\n#include <bit>\n\
+    #include <bitset>\n#include <cassert>\n#include <cctype>\n#include <cfenv>\n#include\
+    \ <charconv>\n#include <chrono>\n#include <cinttypes>\n#include <climits>\n#include\
+    \ <cmath>\n#include <complex>\n#include <cstdarg>\n#include <cstddef>\n#include\
+    \ <cstdint>\n#include <cstdio>\n#include <cstdlib>\n#include <cstring>\n#include\
+    \ <deque>\n#include <fstream>\n#include <functional>\n#include <initializer_list>\n\
+    #include <iomanip>\n#include <ios>\n#include <iostream>\n#include <istream>\n\
+    #include <iterator>\n#include <limits>\n#include <list>\n#include <map>\n#include\
+    \ <memory>\n#include <new>\n#include <numeric>\n#include <ostream>\n#include <queue>\n\
+    #include <random>\n#include <set>\n#include <sstream>\n#include <stack>\n#include\
+    \ <streambuf>\n#include <string>\n#include <tuple>\n#include <type_traits>\n#include\
+    \ <typeinfo>\n#include <unordered_map>\n#include <unordered_set>\n#include <utility>\n\
+    #include <vector>\n\n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\
     \n\nnamespace cpstd {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
     \ntemplate <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
     \tuint32_t _v = 0;\n\n\tstatic constexpr bool is_prime = []() -> bool {\n\t\t\
@@ -184,141 +158,74 @@ data:
     \ T>\nvoid print(H &&tgh, T &&... tgt) {\n\t_print(tgh);\n\tif (sizeof...(tgt))\
     \ _print(' ');\n\tprint(std::forward<T>(tgt)...);\n}\n\nvoid __attribute__((destructor))\
     \ _d() { flush(); }\n\n};\n\nusing Fastio::input;\nusing Fastio::print;\nusing\
-    \ Fastio::flush;\n\n};\n#line 56 \"cpstl/other/Template.hpp\"\n"
-  code: '#pragma once
-
-
-    #include <immintrin.h>
-
-    #include <algorithm>
-
-    #include <array>
-
-    #include <bit>
-
-    #include <bitset>
-
-    #include <cassert>
-
-    #include <cctype>
-
-    #include <cfenv>
-
-    #include <charconv>
-
-    #include <chrono>
-
-    #include <cinttypes>
-
-    #include <climits>
-
-    #include <cmath>
-
-    #include <complex>
-
-    #include <cstdarg>
-
-    #include <cstddef>
-
-    #include <cstdint>
-
-    #include <cstdio>
-
-    #include <cstdlib>
-
-    #include <cstring>
-
-    #include <deque>
-
-    #include <fstream>
-
-    #include <functional>
-
-    #include <initializer_list>
-
-    #include <iomanip>
-
-    #include <ios>
-
-    #include <iostream>
-
-    #include <istream>
-
-    #include <iterator>
-
-    #include <limits>
-
-    #include <list>
-
-    #include <map>
-
-    #include <memory>
-
-    #include <new>
-
-    #include <numeric>
-
-    #include <ostream>
-
-    #include <queue>
-
-    #include <random>
-
-    #include <set>
-
-    #include <sstream>
-
-    #include <stack>
-
-    #include <streambuf>
-
-    #include <string>
-
-    #include <tuple>
-
-    #include <type_traits>
-
-    #include <typeinfo>
-
-    #include <unordered_map>
-
-    #include <unordered_set>
-
-    #include <utility>
-
-    #include <vector>
-
-
-    #include "cpstl/math/StaticModint.hpp"
-
-    #include "cpstl/other/Fastio.hpp"
-
-    '
+    \ Fastio::flush;\n\n};\n#line 4 \"cpstl/ds/BitVector.hpp\"\n\nnamespace cpstd\
+    \ {\n\n// @brief Succint Bit Vector\n\nstruct BitVector {\n\tprivate:\n\tusing\
+    \ u32 = unsigned int;\n\tusing u64 = unsigned long long;\n\tstd::vector<u64> block;\n\
+    \tstd::vector<u32> cnt;\n\tu32 N, zero, sz;\n\n\tpublic:\n\tBitVector() {}\n\t\
+    explicit BitVector(u32 _N) : N(_N), sz(((_N + 1) >> 6) + 1) {\n\t\tblock.resize(sz);\n\
+    \t\tcnt.resize(sz);\n\t}\n\n\t// [pos] \u3092 x \u306E i-th bit \u3067\u66F4\u65B0\
+    \n\t// O(1) time\n\tvoid set(u32 i, u64 x = 1ULL) {\n\t\tassert((i >> 6) < sz);\n\
+    \t\tblock[i >> 6] |= (x << (i & 63));\n\t}\n\n\t// \u30C7\u30FC\u30BF\u69CB\u9020\
+    \u3092\u69CB\u7BC9\u3059\u308B\n\t// O(N) time\n\tvoid build() {\n\t\tfor (u32\
+    \ i = 1; i < sz; ++i) cnt[i] = cnt[i - 1] + std::popcount(block[i - 1]);\n\t\t\
+    zero = rank_0(N);\n\t}\n\n\t// [0, i) \u306B\u542B\u307E\u308C\u308B 1 \u306E\u6570\
+    \u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_1(u32 i) const {\n\t\tassert((i\
+    \ >> 6) < sz);\n\t\treturn cnt[i >> 6] + std::popcount(block[i >> 6] & ((1ULL\
+    \ << (i & 63)) - 1ULL));\n\t}\n\n\t// [l, r) \u306B\u542B\u307E\u308C\u308B 1\
+    \ \u306E\u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_1(u32 l, u32 r) const\
+    \ { return rank_1(r) - rank_1(l); }\n\n\t// [0, i) \u306B\u542B\u307E\u308C\u308B\
+    \ 0 \u306E\u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_0(u32 i) const\
+    \ { return i - rank_1(i); }\n\n\t// [l, r) \u306B\u542B\u307E\u308C\u308B 0 \u306E\
+    \u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_0(u32 l, u32 r) const { return\
+    \ rank_0(r) - rank_0(l); }\n\n\t// [0, N) \u306B\u542B\u307E\u308C\u308B 0 \u306E\
+    \u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_0() const { return zero;\
+    \ }\n\n\t// [pos] \u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 get(u32 i) const {\n\
+    \t\tassert((i >> 6) < sz);\n\t\treturn (u32)(block[i >> 6] >> (i & 63)) & 1;\n\
+    \t}\n\n\t// [pos] \u3092\u8FD4\u3059 (assert \u306A\u3057)\n\t// O(1) time\n\t\
+    u32 operator[](u32 i) const noexcept { return (u32)(block[i >> 6] >> (i & 63))\
+    \ & 1; }\n};\n\n};\n"
+  code: "#pragma once\n\n#include \"cpstl/other/Template.hpp\"\n\nnamespace cpstd\
+    \ {\n\n// @brief Succint Bit Vector\n\nstruct BitVector {\n\tprivate:\n\tusing\
+    \ u32 = unsigned int;\n\tusing u64 = unsigned long long;\n\tstd::vector<u64> block;\n\
+    \tstd::vector<u32> cnt;\n\tu32 N, zero, sz;\n\n\tpublic:\n\tBitVector() {}\n\t\
+    explicit BitVector(u32 _N) : N(_N), sz(((_N + 1) >> 6) + 1) {\n\t\tblock.resize(sz);\n\
+    \t\tcnt.resize(sz);\n\t}\n\n\t// [pos] \u3092 x \u306E i-th bit \u3067\u66F4\u65B0\
+    \n\t// O(1) time\n\tvoid set(u32 i, u64 x = 1ULL) {\n\t\tassert((i >> 6) < sz);\n\
+    \t\tblock[i >> 6] |= (x << (i & 63));\n\t}\n\n\t// \u30C7\u30FC\u30BF\u69CB\u9020\
+    \u3092\u69CB\u7BC9\u3059\u308B\n\t// O(N) time\n\tvoid build() {\n\t\tfor (u32\
+    \ i = 1; i < sz; ++i) cnt[i] = cnt[i - 1] + std::popcount(block[i - 1]);\n\t\t\
+    zero = rank_0(N);\n\t}\n\n\t// [0, i) \u306B\u542B\u307E\u308C\u308B 1 \u306E\u6570\
+    \u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_1(u32 i) const {\n\t\tassert((i\
+    \ >> 6) < sz);\n\t\treturn cnt[i >> 6] + std::popcount(block[i >> 6] & ((1ULL\
+    \ << (i & 63)) - 1ULL));\n\t}\n\n\t// [l, r) \u306B\u542B\u307E\u308C\u308B 1\
+    \ \u306E\u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_1(u32 l, u32 r) const\
+    \ { return rank_1(r) - rank_1(l); }\n\n\t// [0, i) \u306B\u542B\u307E\u308C\u308B\
+    \ 0 \u306E\u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_0(u32 i) const\
+    \ { return i - rank_1(i); }\n\n\t// [l, r) \u306B\u542B\u307E\u308C\u308B 0 \u306E\
+    \u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_0(u32 l, u32 r) const { return\
+    \ rank_0(r) - rank_0(l); }\n\n\t// [0, N) \u306B\u542B\u307E\u308C\u308B 0 \u306E\
+    \u6570\u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 rank_0() const { return zero;\
+    \ }\n\n\t// [pos] \u3092\u8FD4\u3059\n\t// O(1) time\n\tu32 get(u32 i) const {\n\
+    \t\tassert((i >> 6) < sz);\n\t\treturn (u32)(block[i >> 6] >> (i & 63)) & 1;\n\
+    \t}\n\n\t// [pos] \u3092\u8FD4\u3059 (assert \u306A\u3057)\n\t// O(1) time\n\t\
+    u32 operator[](u32 i) const noexcept { return (u32)(block[i >> 6] >> (i & 63))\
+    \ & 1; }\n};\n\n};\n"
   dependsOn:
+  - cpstl/other/Template.hpp
   - cpstl/math/StaticModint.hpp
   - cpstl/other/Fastio.hpp
   isVerificationFile: false
-  path: cpstl/other/Template.hpp
+  path: cpstl/ds/BitVector.hpp
   requiredBy:
-  - cpstl/math/StaticModint.hpp
-  - cpstl/other/Fastio.hpp
   - cpstl/ds/WaveletMatrix.hpp
-  - cpstl/ds/BitVector.hpp
-  - cpstl/ds/Segtree.hpp
-  timestamp: '2025-08-12 03:11:51+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2025-08-12 03:13:18+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
-  - verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
   - verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
-  - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
-  - verify/ds/lc-Union-Find-Dsu.test.cpp
-  - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-  - verify/ds/yuki-0875-Segtree.test.cpp
-documentation_of: cpstl/other/Template.hpp
+documentation_of: cpstl/ds/BitVector.hpp
 layout: document
 redirect_from:
-- /library/cpstl/other/Template.hpp
-- /library/cpstl/other/Template.hpp.html
-title: cpstl/other/Template.hpp
+- /library/cpstl/ds/BitVector.hpp
+- /library/cpstl/ds/BitVector.hpp.html
+title: Succint Bit Vector
 ---

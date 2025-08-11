@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: cpstl/math/StaticModint.hpp
     title: Static Modint
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: cpstl/other/Fastio.hpp
     title: Fast I/O
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: cpstl/other/Template.hpp
     title: cpstl/other/Template.hpp
   _extendedRequiredBy: []
@@ -37,8 +37,8 @@ data:
     #include <random>\n#include <set>\n#include <sstream>\n#include <stack>\n#include\
     \ <streambuf>\n#include <string>\n#include <tuple>\n#include <type_traits>\n#include\
     \ <typeinfo>\n#include <unordered_map>\n#include <unordered_set>\n#include <utility>\n\
-    #include <vector>\n\n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n#line 7 \"cpstl/math/StaticModint.hpp\"\
-    \n\nnamespace cpstd {\n\n// Static Modint\n\n// https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
+    #include <vector>\n\n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\
+    \n\nnamespace cpstd {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
     \ntemplate <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
     \tuint32_t _v = 0;\n\n\tstatic constexpr bool is_prime = []() -> bool {\n\t\t\
     if (m == 1) return false;\n\t\tif (m == 2 || m == 7 || m == 61) return true;\n\
@@ -269,7 +269,7 @@ data:
   isVerificationFile: false
   path: cpstl/ds/Segtree.hpp
   requiredBy: []
-  timestamp: '2025-08-10 02:51:18+09:00'
+  timestamp: '2025-08-12 03:11:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp

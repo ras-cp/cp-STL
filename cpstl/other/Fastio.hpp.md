@@ -1,26 +1,41 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: cpstl/math/StaticModint.hpp
     title: Static Modint
+  - icon: ':question:'
+    path: cpstl/other/Template.hpp
+    title: cpstl/other/Template.hpp
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: cpstl/ds/BitVector.hpp
+    title: Succint Bit Vector
   - icon: ':heavy_check_mark:'
     path: cpstl/ds/Segtree.hpp
     title: Segment Tree
   - icon: ':heavy_check_mark:'
+    path: cpstl/ds/WaveletMatrix.hpp
+    title: Wavelet Matrix
+  - icon: ':question:'
+    path: cpstl/math/StaticModint.hpp
+    title: Static Modint
+  - icon: ':question:'
     path: cpstl/other/Template.hpp
     title: cpstl/other/Template.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
     title: verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
     title: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
     title: verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
+    title: verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/ds/lc-Union-Find-Dsu.test.cpp
     title: verify/ds/lc-Union-Find-Dsu.test.cpp
@@ -30,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
     title: verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://judge.yosupo.jp/submission/21623
@@ -41,9 +56,21 @@ data:
     \ <cstdio>\n#include <cstddef>\n#include <string>\n#include <type_traits>\n#include\
     \ <utility>\n#include <tuple>\n#include <array>\n#include <vector>\n#include <any>\n\
     #include <ios>\n#include <iomanip>\n#line 2 \"cpstl/math/StaticModint.hpp\"\n\n\
-    #line 6 \"cpstl/math/StaticModint.hpp\"\n#include <cassert>\n\nnamespace cpstd\
-    \ {\n\n// Static Modint\n\n// https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\ntemplate\
-    \ <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
+    #line 2 \"cpstl/other/Template.hpp\"\n\n#include <immintrin.h>\n#include <algorithm>\n\
+    #line 6 \"cpstl/other/Template.hpp\"\n#include <bit>\n#include <bitset>\n#include\
+    \ <cassert>\n#include <cctype>\n#include <cfenv>\n#include <charconv>\n#include\
+    \ <chrono>\n#include <cinttypes>\n#include <climits>\n#include <cmath>\n#include\
+    \ <complex>\n#include <cstdarg>\n#line 21 \"cpstl/other/Template.hpp\"\n#include\
+    \ <cstdlib>\n#include <cstring>\n#include <deque>\n#include <fstream>\n#include\
+    \ <functional>\n#include <initializer_list>\n#line 29 \"cpstl/other/Template.hpp\"\
+    \n#include <iostream>\n#include <istream>\n#include <iterator>\n#include <limits>\n\
+    #include <list>\n#include <map>\n#include <memory>\n#include <new>\n#include <numeric>\n\
+    #include <ostream>\n#include <queue>\n#include <random>\n#include <set>\n#include\
+    \ <sstream>\n#include <stack>\n#include <streambuf>\n#line 48 \"cpstl/other/Template.hpp\"\
+    \n#include <typeinfo>\n#include <unordered_map>\n#include <unordered_set>\n#line\
+    \ 53 \"cpstl/other/Template.hpp\"\n\n#line 4 \"cpstl/math/StaticModint.hpp\"\n\
+    \nnamespace cpstd {\n\n// @brief Static Modint\n\n// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn\n\
+    \ntemplate <uint32_t m>\nstruct StaticModint {\n\tprivate:\n\tusing mint = StaticModint;\n\
     \tuint32_t _v = 0;\n\n\tstatic constexpr bool is_prime = []() -> bool {\n\t\t\
     if (m == 1) return false;\n\t\tif (m == 2 || m == 7 || m == 61) return true;\n\
     \t\tif (!(m & 1)) return false;\n\t\tuint32_t d = m - 1;\n\t\twhile (!(d & 1))\
@@ -244,16 +271,21 @@ data:
     \ Fastio::flush;\n\n};\n"
   dependsOn:
   - cpstl/math/StaticModint.hpp
+  - cpstl/other/Template.hpp
   isVerificationFile: false
   path: cpstl/other/Fastio.hpp
   requiredBy:
+  - cpstl/math/StaticModint.hpp
   - cpstl/other/Template.hpp
+  - cpstl/ds/WaveletMatrix.hpp
+  - cpstl/ds/BitVector.hpp
   - cpstl/ds/Segtree.hpp
-  timestamp: '2025-07-30 23:15:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-08-12 03:11:51+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/other/lc-Many-A+B-128bit-Fastio.test.cpp
   - verify/ds/lc-Range-Affine-Range-Sum-LazySegtree.test.cpp
+  - verify/ds/lc-Range-Kth-Smallest-WaveletMatrix.test.cpp
   - verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   - verify/ds/lc-Union-Find-Dsu.test.cpp
   - verify/ds/lc-Point-Add-Range-Sum-Segtree.test.cpp
