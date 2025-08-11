@@ -12,6 +12,9 @@ data:
     path: cpstl/ds/BitVector.hpp
     title: Succint Bit Vector
   - icon: ':heavy_check_mark:'
+    path: cpstl/ds/DualSegtree.hpp
+    title: Dual Segment Tree
+  - icon: ':heavy_check_mark:'
     path: cpstl/ds/Segtree.hpp
     title: Segment Tree
   - icon: ':heavy_check_mark:'
@@ -239,6 +242,7 @@ data:
   requiredBy:
   - cpstl/other/Fastio.hpp
   - cpstl/other/Template.hpp
+  - cpstl/ds/DualSegtree.hpp
   - cpstl/ds/WaveletMatrix.hpp
   - cpstl/ds/BitVector.hpp
   - cpstl/ds/Segtree.hpp

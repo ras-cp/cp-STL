@@ -159,40 +159,40 @@ data:
     \ T>\nvoid print(H &&tgh, T &&... tgt) {\n\t_print(tgh);\n\tif (sizeof...(tgt))\
     \ _print(' ');\n\tprint(std::forward<T>(tgt)...);\n}\n\nvoid __attribute__((destructor))\
     \ _d() { flush(); }\n\n};\n\nusing Fastio::input;\nusing Fastio::print;\nusing\
-    \ Fastio::flush;\n\n};\n#line 2 \"cpstl/ds/DualSegtree.hpp\"\n\n#line 5 \"cpstl/ds/DualSegtree.hpp\"\
-    \n\nnamespace cpstd {\n\n// Dual Segment Tree\n\ntemplate <\n\ttypename F,\n\t\
-    auto composition,\n\tauto id\n>\nclass DualSegtree {\n\tprivate:\n\tstd::vector<F>\
-    \ lazy;\n\tint N, sz, log;\n\n\tvoid pushdown(int pos) {\n\t\tfor (int i = log;\
-    \ i >= 1; --i) {\n\t\t\tint p = pos >> i;\n\t\t\tlazy[p << 1] = composition(lazy[p],\
-    \ lazy[p << 1]);\n\t\t\tlazy[p << 1 | 1] = composition(lazy[p], lazy[p << 1 |\
-    \ 1]);\n\t\t\tlazy[p] = id();\n\t\t}\n\t}\n\n\tpublic:\n\tDualSegtree() {}\n\t\
-    explicit DualSegtree(int n) : N(n) {\n\t\tsz = std::bit_ceil((unsigned int)(N));\n\
-    \t\tlog = std::bit_width((unsigned int)(sz)) - 1;\n\t\tlazy.assign(sz << 1, id());\n\
-    \t}\n\n\t// A[pos] \u3078\u306E\u4F5C\u7528\u7D20\u3092 f \u306B\u3059\u308B\n\
-    \t// O(logN) time\n\tvoid set(int pos, const F &f) {\n\t\tassert(0 <= pos && pos\
-    \ < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\tlazy[pos] = f;\n\t}\n\n\t// A[pos]\
-    \ \u306B f \u3092\u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN) time\n\tvoid apply(int\
-    \ pos, const F &f) {\n\t\tassert(0 <= pos && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\
-    \t\tlazy[pos] = composition(f, lazy[pos]);\n\t}\n\n\t// A[l, r) \u306B f \u3092\
-    \u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN) time\n\tvoid apply(int l, int r,\
-    \ const F &f) {\n\t\tassert(0 <= l && l <= r && r <= N);\n\t\tif (l == r) return;\n\
-    \t\tl += sz, r += sz;\n\t\tpushdown(l), pushdown(r - 1);\n\t\tfor (; l < r; l\
-    \ >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lazy[l] = composition(f, lazy[l]), ++l;\n\
-    \t\t\tif (r & 1) --r, lazy[r] = composition(f, lazy[r]);\n\t\t}\n\t}\n\n\t// A[pos]\
-    \ \u306E\u4F5C\u7528\u7D20\u3092\u8FD4\u3059\n\t// O(logN) time\n\tF get(int pos)\
-    \ {\n\t\tassert(0 <= pos && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\t\
-    return lazy[pos];\n\t}\n\n\t// A[pos] \u306E\u4F5C\u7528\u7D20\u3092\u8FD4\u3059\
-    \n\t// O(logN) time\n\tF operator[](int pos) noexcept {\n\t\tpos += sz;\n\t\t\
-    pushdown(pos);\n\t\treturn lazy[pos];\n\t}\n};\n};\n#line 5 \"verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp\"\
-    \n\nusing mint = cpstd::Modint998244353;\nusing F = std::pair<mint, mint>;\nF\
-    \ composition(F g, F f) { return {f.first * g.first, f.second * g.first + g.second};\
-    \ }\nF id() { return {1, 0}; }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N,\
-    \ Q);\n\tstd::vector<mint> A(N);\n\tcpstd::input(A);\n\tcpstd::DualSegtree<F,\
-    \ composition, id> sg(N);\n\tint t, l, r, p;\n\tmint b, c;\n\twhile (Q--) {\n\t\
-    \tcpstd::input(t);\n\t\tif (t == 0) {\n\t\t\tcpstd::input(l, r, b, c);\n\t\t\t\
-    sg.apply(l, r, {b, c});\n\t\t}\n\t\telse {\n\t\t\tcpstd::input(p);\n\t\t\tF act\
-    \ = sg[p];\n\t\t\tcpstd::print(act.first * A[p] + act.second);\n\t\t}\n\t}\n\t\
-    return 0;\n}\n"
+    \ Fastio::flush;\n\n};\n#line 2 \"cpstl/ds/DualSegtree.hpp\"\n\n#line 4 \"cpstl/ds/DualSegtree.hpp\"\
+    \n\nnamespace cpstd {\n\n// @brief Dual Segment Tree\n// @see\n\ntemplate <\n\t\
+    typename F,\n\tauto composition,\n\tauto id\n>\nclass DualSegtree {\n\tprivate:\n\
+    \tstd::vector<F> lazy;\n\tint N, sz, log;\n\n\tvoid pushdown(int pos) {\n\t\t\
+    for (int i = log; i >= 1; --i) {\n\t\t\tint p = pos >> i;\n\t\t\tlazy[p << 1]\
+    \ = composition(lazy[p], lazy[p << 1]);\n\t\t\tlazy[p << 1 | 1] = composition(lazy[p],\
+    \ lazy[p << 1 | 1]);\n\t\t\tlazy[p] = id();\n\t\t}\n\t}\n\n\tpublic:\n\tDualSegtree()\
+    \ {}\n\texplicit DualSegtree(int n) : N(n) {\n\t\tsz = std::bit_ceil((unsigned\
+    \ int)(N));\n\t\tlog = std::bit_width((unsigned int)(sz)) - 1;\n\t\tlazy.assign(sz\
+    \ << 1, id());\n\t}\n\n\t// [pos] \u3078\u306E\u4F5C\u7528\u7D20\u3092 f \u306B\
+    \u3059\u308B\n\t// O(logN) time\n\tvoid set(int pos, const F &f) {\n\t\tassert(0\
+    \ <= pos && pos < N);\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\tlazy[pos] = f;\n\
+    \t}\n\n\t// [pos] \u306B f \u3092\u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN)\
+    \ time\n\tvoid apply(int pos, const F &f) {\n\t\tassert(0 <= pos && pos < N);\n\
+    \t\tpos += sz;\n\t\tpushdown(pos);\n\t\tlazy[pos] = composition(f, lazy[pos]);\n\
+    \t}\n\n\t// [l, r) \u306B f \u3092\u4F5C\u7528\u3055\u305B\u308B\n\t// O(logN)\
+    \ time\n\tvoid apply(int l, int r, const F &f) {\n\t\tassert(0 <= l && l <= r\
+    \ && r <= N);\n\t\tif (l == r) return;\n\t\tl += sz, r += sz;\n\t\tpushdown(l),\
+    \ pushdown(r - 1);\n\t\tfor (; l < r; l >>= 1, r >>= 1) {\n\t\t\tif (l & 1) lazy[l]\
+    \ = composition(f, lazy[l]), ++l;\n\t\t\tif (r & 1) --r, lazy[r] = composition(f,\
+    \ lazy[r]);\n\t\t}\n\t}\n\n\t// [pos] \u306E\u4F5C\u7528\u7D20\u3092\u8FD4\u3059\
+    \n\t// O(logN) time\n\tF get(int pos) {\n\t\tassert(0 <= pos && pos < N);\n\t\t\
+    pos += sz;\n\t\tpushdown(pos);\n\t\treturn lazy[pos];\n\t}\n\n\t// [pos] \u306E\
+    \u4F5C\u7528\u7D20\u3092\u8FD4\u3059\n\t// O(logN) time\n\tF operator[](int pos)\
+    \ noexcept {\n\t\tpos += sz;\n\t\tpushdown(pos);\n\t\treturn lazy[pos];\n\t}\n\
+    };\n};\n#line 5 \"verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp\"\n\
+    \nusing mint = cpstd::Modint998244353;\nusing F = std::pair<mint, mint>;\nF composition(F\
+    \ g, F f) { return {f.first * g.first, f.second * g.first + g.second}; }\nF id()\
+    \ { return {1, 0}; }\n\nint main() {\n\tint N, Q;\n\tcpstd::input(N, Q);\n\tstd::vector<mint>\
+    \ A(N);\n\tcpstd::input(A);\n\tcpstd::DualSegtree<F, composition, id> sg(N);\n\
+    \tint t, l, r, p;\n\tmint b, c;\n\twhile (Q--) {\n\t\tcpstd::input(t);\n\t\tif\
+    \ (t == 0) {\n\t\t\tcpstd::input(l, r, b, c);\n\t\t\tsg.apply(l, r, {b, c});\n\
+    \t\t}\n\t\telse {\n\t\t\tcpstd::input(p);\n\t\t\tF act = sg[p];\n\t\t\tcpstd::print(act.first\
+    \ * A[p] + act.second);\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\
     \n\n#include \"cpstl/other/Template.hpp\"\n#include \"cpstl/ds/DualSegtree.hpp\"\
     \n\nusing mint = cpstd::Modint998244353;\nusing F = std::pair<mint, mint>;\nF\
@@ -212,7 +212,7 @@ data:
   isVerificationFile: true
   path: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
   requiredBy: []
-  timestamp: '2025-08-12 03:29:34+09:00'
+  timestamp: '2025-08-12 03:30:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/ds/lc-Range-Affine-Point-Get-DualSegtree.test.cpp
