@@ -1,25 +1,12 @@
 #pragma once
 
-#include <cstdint>
-#include <cstdio>
-#include <cstddef>
-#include <string>
-#include <type_traits>
-#include <utility>
-#include <tuple>
-#include <array>
-#include <vector>
-#include <any>
-#include <ios>
-#include <iomanip>
-#include "cpstl/math/StaticModint.hpp"
+#include "cpstl/other/Template.hpp"
 
 namespace cpstd {
 
-// Fast I/O
-
-// https://judge.yosupo.jp/submission/21623
-// https://maspypy.com/library-checker-many-a-b
+// @brief Fast I/O
+// @see https://judge.yosupo.jp/submission/21623
+// @see https://maspypy.com/library-checker-many-a-b
 
 namespace Fastio {
 
