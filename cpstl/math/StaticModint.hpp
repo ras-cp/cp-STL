@@ -1,15 +1,12 @@
 #pragma once
 
-#include <cstdint>
-#include <utility>
-#include <type_traits>
-#include <cassert>
+#include "cpstl/other/Template.hpp"
 
 namespace cpstd {
 
-// Static Modint
+// @brief Static Modint
 
-// https://hackmd.io/@tatyam-prime/rkVCOcwQn
+// @see https://hackmd.io/@tatyam-prime/rkVCOcwQn
 
 template <uint32_t m>
 struct StaticModint {
